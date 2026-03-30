@@ -1,0 +1,97 @@
+/* 1. Reset y Modelo de Cajas */
+* { /* El selector universal (*) se utiliza para aplicar estilos a todos los elementos de la página. */
+    margin: 0; /* Reset: Elimina márgenes y padding predeterminados de todos los elementos para evitar inconsistencias entre navegadores. */
+    padding: 0; /* Reset: Elimina márgenes y padding predeterminados de todos los elementos para evitar inconsistencias entre navegadores. */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño final */
+}
+
+/* 2. Cuerpo: Fondo claro y centrado total */
+body { /* El cuerpo de la página, que tiene un fondo claro y utiliza Flexbox para centrar el contenido. */
+    background-color: #f5f5f7; 
+    display: flex; /* Flexbox para centrar el contenido tanto horizontal como verticalmente. */
+    justify-content: center; /* Centra horizontalmente el contenido dentro del body. */
+    align-items: center; /* Centra verticalmente el contenido dentro del body. */
+    height: 100vh; /* Altura completa de la ventana para centrar verticalmente */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible. */
+}
+
+/* 3. El Cuadro (Card) */
+.card { /* El contenedor principal del formulario de login, que tiene un fondo blanco, sombra y bordes redondeados para destacarse del fondo. */
+    background-color: white; /* Fondo blanco para destacar el formulario. */
+    padding: 2.5rem;           /* Padding: Espacio interno solicitado */
+    border: 1px solid #ddd;    /* Border: Borde solicitado */
+    border-radius: 12px; /* Bordes redondeados para un aspecto más suave y moderno. */
+    width: 380px; /* Ancho fijo para mantener la consistencia del diseño. */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Sombra suave para dar profundidad al card. */
+    text-align: center; /* Centra el texto dentro del card para un diseño más equilibrado. */
+}
+
+/* 4. El Logo y Título */
+.logo { 
+    display: block;  /* Permite usar márgenes automáticos para centrar */
+    margin-left: auto;  /* Centra a la izquierda */
+    margin-right: auto;  /* Centra a la derecha */
+    width: 250px;  /* Tamaño controlado para que no se vea gigante */
+    height: auto;  /* Mantiene la proporción de la imagen */
+    margin-bottom: 1.5rem; /* Espacio solicitado con el título */
+}
+
+/* 5. Inputs del Formulario */
+.input-group { /* El contenedor de cada grupo de entrada (email y contraseña), que incluye la etiqueta y el campo de entrada. */
+    margin-bottom: 1.2rem; /* Margin: Margen exterior solicitado para separar cada grupo de entrada. */
+    text-align: left; /* Alinea el texto a la izquierda dentro del grupo de entrada */
+}
+
+label { /* Las etiquetas de los campos de entrada (Email y Contraseña), que se muestran encima de cada campo. */
+    display: block; /* Hace que la etiqueta ocupe toda la línea, lo que permite que el campo de entrada se muestre debajo de ella. */
+    margin-bottom: 0.5rem; /* Margin: Margen exterior solicitado */
+    font-weight: 600; /* Font-weight: Peso de fuente solicitado */
+    color: #4b1d6e; /* Morado SportClub */
+}
+
+input { /* Los campos de entrada para el email y la contraseña, que tienen un borde, padding y bordes redondeados para mejorar su apariencia. */
+    width: 100%; /* Hace que el campo de entrada ocupe todo el ancho del contenedor padre (input-group). */
+    padding: 0.8rem; /* Padding: Espacio interno solicitado */
+    border: 1.5px solid #4b1d6e; /* Border: Borde solicitado */
+    border-radius: 6px; /* Bordes redondeados para un aspecto más suave y moderno. */
+    outline-color: #fdb813; /* Amarillo SportClub al seleccionar */
+}
+
+/* 6. Botón de Inicio de Sesión */
+.btn-login { /* El botón de inicio de sesión, que tiene un fondo morado, texto blanco, bordes redondeados y un efecto hover para indicar que es interactivo. */
+    width: 100%; /* Hace que el botón ocupe todo el ancho del contenedor padre (formulario). */
+    padding: 0.9rem; /* Padding: Espacio interno solicitado */ 
+    background-color: #4b1d6e; /* Fondo morado para destacar el botón. */ 
+    color: white; /* Color del texto en blanco para contraste con el fondo morado. */
+    border: none; /* Sin borde para un diseño más limpio. */
+    border-radius: 6px; /* Bordes redondeados para un aspecto más suave y moderno. */
+
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón para indicar que es interactivo. */
+    font-weight: bold; /* Font-weight: Peso de fuente solicitado para el texto del botón. */
+    font-size: 1rem; /* Font-size: Tamaño de fuente solicitado */
+    margin-top: 1rem; /* Margin-top: Margen superior solicitado */
+    
+    /* Agrega esta línea justo debajo del comentario: */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo al hacer hover, lo que mejora la experiencia del usuario al interactuar con el botón. */
+} 
+
+.btn-login:hover { /* Efecto hover para el botón de inicio de sesión, que cambia el fondo a un color más oscuro para indicar que es interactivo. */
+    background-color: #3a1656; /* Color más oscuro al pasar el mouse para indicar que el botón es interactivo. */
+} 
+
+/* 7. Enlaces de recuperación y registro */
+.footer-links { /* El contenedor para los enlaces de "¿Olvidaste tu contraseña?" y "Registrarse", que se muestra debajo del formulario. */
+    margin-top: 1.5rem; /* Margin: Margen exterior solicitado para separar el contenedor de los enlaces del formulario. */
+    display: flex;/* Flexbox para organizar los enlaces en una fila. */
+    justify-content: space-between; /* Justifica el contenido para que los enlaces estén separados */
+    font-size: 0.85rem; /* Tamaño de fuente solicitado */
+}
+
+.footer-links a {
+    color: #4b1d6e; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.footer-links a:hover { /* Efecto hover para los enlaces, que subraya el texto al pasar el mouse para indicar que son interactivos. */
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
