@@ -5,7 +5,7 @@
 **Herramienta utilizada:** Gemini 3 Flash
 
 ## 1. Prompts utilizados:
-* "Desarrollar una página de Login en HTML5 y CSS3 basada en un boceto de cliente."
+* "Desarrollar una página de Login en HTML5 y CSS3."
 * "Creación de estilos CSS aplicando el modelo de cajas (margin, padding, border)."
 
 ## 2. Resultado generado por la IA:
