@@ -1,0 +1,45 @@
+<!DOCTYPE html> <!-- Esto es lo que hace que el navegador sepa que este documento es un archivo HTML5 moderno -->
+<html lang="es"> <!-- Define que el contenido de la web está en español -->
+<head>  <!-- Aca es el contenedor de los metadatos (información que no ve el usuario directamente). -->
+    <meta charset="UTF-8"> <!--  Esto asegura que se vean bien las tildes y la letra "ñ". -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página se vea bien
+     en celulares y tablets, ajustando el ancho de la página al tamaño de la pantalla del dispositivo. -->
+    <title>Login - SportClub</title> <!-- El título que aparece en la pestaña del navegador. -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Enlace a la hoja de estilos CSS que contiene las reglas de diseño para esta página. El archivo "style.css" debe estar ubicado en una carpeta llamada "css". -->
+</head>  <!-- Cierre del contenedor de metadatos -->
+<body>
+    <main class="container"> <!-- El contenedor principal que centra el contenido en la página. -->
+        <section class="card"> <!-- La tarjeta que contiene el formulario de login, con un fondo blanco y sombra para destacarse del fondo. -->
+            
+            <img src="image/logo_empresa_letra_v1.png" alt="SportClub Logo" class="logo"> <!-- El logo de la empresa, que se muestra en la parte superior de la tarjeta. El atributo "src" 
+            especifica la ubicación de la imagen, y el atributo "alt" proporciona un texto alternativo para describir la imagen en caso de que no se pueda cargar. La clase "logo" se utiliza para aplicar estilos específicos a esta imagen. -->
+
+            <h1>Login</h1> <!-- El título principal de la página, que indica que es la sección de inicio de sesión. -->
+
+            <form action="#"> <!-- El formulario de inicio de sesión, que se enviará a la URL especificada en el atributo "action" (en este caso, "#" es un marcador de posición). -->
+                <div class="input-group"> <!-- Grupo de entrada para el email, que incluye la etiqueta y el campo de entrada. -->
+                    <label for="email">Email</label> <!-- La etiqueta para el campo de email, que se asocia con el campo de entrada a través del atributo "for". -->
+                    <input type="email" id="email" placeholder="Ingresa tu correo" required> <!-- El campo de entrada para el email, que requiere que el usuario ingrese un correo electrónico válido
+                     antes de enviar el formulario. El atributo "placeholder" muestra un texto de ejemplo dentro del campo. -->
+                </div> <!-- Cierre del grupo de entrada para el email -->
+
+                <div class="input-group"> <!-- Grupo de entrada para la contraseña, que incluye la etiqueta y el campo de entrada. -->
+                    <label for="password">Contraseña</label> <!-- La etiqueta para el campo de contraseña, que se asocia con el campo de entrada a través del atributo "for". -->
+                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required> <!-- El campo de entrada para la contraseña, que requiere que el usuario
+                     ingrese una contraseña antes de enviar el formulario. El atributo "placeholder" muestra un texto de ejemplo dentro del campo. -->
+                </div> <!-- Cierre del grupo de entrada para la contraseña -->
+
+                <button type="submit" class="btn-login">Ingresar</button> <!-- El botón de envío del formulario, que tiene un estilo específico
+                 definido por la clase "btn-login". Al hacer clic en este botón, el formulario se enviará a la URL especificada en el atributo "action" del formulario. -->
+            </form> <!-- Cierre del formulario -->
+
+            <div class="footer-links"> <!-- Un contenedor para los enlaces de "¿Olvidaste tu contraseña?" y "Registrarse", que se muestra debajo del formulario. -->
+                <a href="#">¿Olvidaste tu contraseña?</a> <!-- Un enlace para recuperar la contraseña, que actualmente no tiene una URL específica (indicado por "#"). -->
+                <span>|</span> <!-- Un separador visual entre los dos enlaces, que muestra una barra vertical. -->
+                <a href="#">Registrarse</a> <!-- Un enlace para registrarse, que actualmente no tiene una URL específica (indicado por "#"). -->
+            </div> <!-- Cierre del contenedor de enlaces del pie de página -->
+            
+        </section> <!-- Cierre de la tarjeta que contiene el formulario de login -->
+    </main> <!-- Cierre del contenedor principal -->
+</body> <!-- Cierre del cuerpo del documento -->
+</html> <!-- Cierre del documento HTML -->
