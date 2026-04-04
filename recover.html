@@ -1,0 +1,51 @@
+<!DOCTYPE html> <!-- Esto es lo que hace que el navegador sepa que este documento es un archivo HTML5 moderno -->
+<html lang="es"> <!-- Define que el contenido de la web está en español -->
+<head> <!-- Aca es el contenedor de los metadatos (información que no ve el usuario directamente). -->
+    <meta charset="UTF-8"> <!-- Esto asegura que se vean bien las tildes y la letra "ñ". -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página se vea bien en celulares y tablets, ajustando el ancho de la página al tamaño de la pantalla del dispositivo. -->
+    <title>Recuperar Contraseña - SportClub</title> <!-- El título que aparece en la pestaña del navegador. -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Enlace a la hoja de estilos CSS que contiene las reglas de diseño para esta página. El archivo "style.css" debe estar ubicado en una carpeta llamada "css". -->
+</head> <!-- Cierre del contenedor de metadatos -->
+<body> <!-- Cuerpo del documento, que contiene todo el contenido visible de la página. -->
+    <main class="container">  <!-- El contenedor principal de la página, que tiene una clase "container" para aplicar estilos específicos. Dentro de este contenedor, se encuentra la sección que contiene el formulario de recuperación de contraseña. -->
+        <section class="card"> <!-- Una sección con la clase "card" que probablemente se utiliza para darle un estilo de tarjeta al formulario de recuperación de contraseña. -->
+            <div class="back-container"> <!-- Un contenedor para el enlace de "volver", que se muestra en la parte superior de la tarjeta. -->
+                <a href="index.html" class="btn-back">← Volver al login</a> <!-- Un enlace que permite al usuario volver a la página de inicio de sesión. El enlace apunta a "index.html", que es la página de inicio de sesión. -->
+            </div> <!-- Cierre del contenedor de "volver" -->
+
+            <img src="image/logo_empresa_letra_v1.png" alt="SportClub Logo" class="logo"> <!-- Una imagen que muestra el logo de la empresa. El atributo "src" especifica la ruta de la imagen, el atributo "alt" proporciona  
+            un texto alternativo para la imagen (que se muestra si la imagen no se carga), y la clase "logo" se utiliza para aplicar estilos específicos a esta imagen. -->
+            <h2>Recuperar cuenta</h2> <!-- El título principal de la página, que indica que es la sección de recuperación de contraseña. -->
+            <p style="margin-bottom: 1.5rem; font-size: 0.9rem; color: #666;">Ingresa tu correo para enviarte un enlace de acceso.</p> <!-- Un párrafo que proporciona instrucciones adicionales al usuario sobre cómo recuperar su contraseña. 
+            El estilo en línea se utiliza para agregar un margen inferior, establecer un tamaño de fuente más pequeño y un color de texto gris para que el mensaje sea menos prominente que el título. -->
+
+            <form id="recoverForm"> <!-- El formulario de recuperación de contraseña, que se enviará a la URL especificada en el atributo "action" (en este caso, no se especifica una URL,
+                 lo que significa que el formulario no se enviará a ningún lado). El formulario tiene un ID "recoverForm" para que pueda ser referenciado en el script de JavaScript. -->
+                <div class="input-group"> <!-- Grupo de entrada para el email, que incluye la etiqueta y el campo de entrada. -->
+                    <label for="recover-email">Correo electrónico</label> <!-- La etiqueta para el campo de email, que se asocia con el campo de entrada a través del atributo "for". -->
+                    <input type="email" id="recover-email" placeholder="ejemplo@correo.com" required> <!-- El campo de entrada para el email, que requiere que el usuario ingrese un 
+                    correo electrónico válido antes de enviar el formulario. El atributo "placeholder" muestra un texto de ejemplo dentro del campo. -->
+                </div> <!-- Cierre del grupo de entrada para el email -->
+                <button type="submit" class="btn-login">Recuperar contraseña</button> <!-- El botón de envío del formulario, que tiene un estilo específico 
+                definido por la clase "btn-login". Al hacer clic en este botón, el formulario se enviará a la URL especificada en el atributo "action" del formulario 
+                (en este caso, no se especifica una URL, lo que significa que el formulario no se enviará a ningún lado). -->
+            </form> <!-- Cierre del formulario -->
+
+            <div id="confirmMessage" style="display: none; margin-top: 1.5rem; padding: 1rem; background-color: #d4edda; color: #155724; border-radius: 6px; font-size: 0.9rem; border: 1px solid #c3e6cb;"> <!-- Un mensaje de confirmación que se muestra después de que el usuario envía el formulario. 
+                El mensaje está oculto por defecto (display: none) y se muestra mediante JavaScript cuando el formulario se envía. El estilo en línea se utiliza para agregar un margen superior, relleno, color de fondo verde claro, color de texto verde oscuro, bordes redondeados, un tamaño de fuente más 
+                pequeño y un borde verde claro para que el mensaje sea visualmente atractivo y fácil de leer. -->
+                 Se ha enviado un enlace de recuperación a su correo.
+            </div> <!-- Cierre del mensaje de confirmación -->
+        </section> <!-- Cierre de la tarjeta que contiene el formulario de recuperación de contraseña -->
+    </main> <!-- Cierre del contenedor principal -->
+
+    <script> <!-- Un bloque de código JavaScript que se ejecuta en el navegador para manejar la lógica de envío del formulario de recuperación de contraseña. -->
+        // Simulación de envío para cumplir con el requisito visual
+        document.getElementById('recoverForm').addEventListener('submit', function(e) { // Agrega un evento de escucha para el evento "submit" del formulario con el ID "recoverForm". Cuando el formulario se envía, se ejecuta la función proporcionada. -->
+            e.preventDefault(); // Evita que el formulario se envíe realmente, ya que no hay una URL de destino para el envío del formulario.
+            this.style.display = 'none'; // Oculta el formulario al enviar
+            document.getElementById('confirmMessage').style.display = 'block'; // Muestra el mensaje
+        });
+    </script> <!-- Cierre del bloque de código JavaScript -->
+</body> <!-- Cierre del cuerpo del documento -->
+</html> <!-- Cierre del documento HTML -->

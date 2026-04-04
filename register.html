@@ -1,0 +1,61 @@
+<!DOCTYPE html> <!-- Esto es lo que hace que el navegador sepa que este documento es un archivo HTML5 moderno -->
+<html lang="es"> <!-- Define que el contenido de la web está en español -->
+<head> <!-- Esto es lo que hace que el navegador sepa que este documento es un archivo HTML5 moderno -->
+     <!-- Define que el contenido de la web está en español -->
+     <!-- Aca es el contenedor de los metadatos (información que no ve el usuario directamente). -->        
+    <meta charset="UTF-8"> <!-- Esto asegura que se vean bien las tildes y la letra "ñ". -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página se vea bien en celulares y tablets, ajustando el ancho de la página al tamaño de la pantalla del dispositivo. -->
+    <title>Registro - SportClub</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Enlace a la hoja de estilos CSS que contiene las reglas de diseño para esta página. El archivo "style.css" debe estar ubicado en una carpeta llamada "css". -->
+</head> <!-- Cierre del contenedor de metadatos -->
+<body> <!-- Este es el código HTML para la página de registro de SportClub. La estructura es similar a las otras páginas, con un contenedor principal que contiene una tarjeta con el formulario de registro.
+ El formulario incluye campos para el correo electrónico, contraseña, nombre completo y nivel de condición física, así como un botón para enviar el formulario. También hay un enlace para volver a la página de inicio de sesión. -->
+    <main class="container"> <!-- El contenedor principal de la página, que tiene una clase "container" para aplicar estilos específicos. Dentro de este contenedor, hay una sección con la clase "card" que probablemente se utiliza para darle un estilo de tarjeta al formulario de registro. -->
+        <section class="card"> <!-- El contenedor principal de la página, que tiene una clase "container" para aplicar estilos específicos. Dentro de este contenedor, hay una sección con la clase "card" que probablemente se utiliza para darle un estilo de tarjeta al formulario de registro. -->
+            <div class="back-container"> <!-- Un contenedor para el enlace de "volver", que se muestra en la parte superior de la tarjeta. -->
+                <a href="index.html" class="btn-back">← Volver al Login</a> <!-- Un enlace que permite al usuario volver a la página de inicio de sesión. El enlace apunta a "index.html", que es la página de inicio de sesión. -->
+            </div> <!-- Un contenedor para el enlace de "volver", que se muestra en la parte superior de la tarjeta. -->
+
+            <img src="image/logo_empresa_letra_v1.png" alt="SportClub Logo" class="logo"> <!-- Una imagen que muestra el logo de la empresa. El atributo "src" especifica la ruta de la imagen, el atributo "alt" proporciona un texto alternativo para la imagen (que se muestra si la imagen no se carga), y la clase "logo" se utiliza para aplicar estilos específicos a esta imagen. -->
+            <h2>Crea tu cuenta</h2> <!-- El título principal de la página, que indica que es la sección de registro. -->
+            <p style="margin-bottom: 1.5rem; font-size: 0.9rem; color: #666;">Completa el formulario para crear tu cuenta.</p> <!-- Un párrafo que proporciona instrucciones adicionales al usuario sobre cómo registrarse.
+             El estilo en línea se utiliza para agregar un margen inferior, establecer un tamaño de fuente más pequeño y un color de texto gris para que el mensaje sea menos prominente que el título. -->
+
+            <form action="#"> <!-- El formulario de registro, que se enviará a la URL especificada en el atributo "action" (en este caso, no se especifica una URL, lo que significa que el formulario no se enviará a ningún lado). -->
+                <div class="input-group"> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el registro. -->
+                    <label for="reg-email">Correo electrónico *</label> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el registro. -->
+                    <input type="email" id="reg-email" placeholder="ejemplo@correo.com" required> </div> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el registro. -->
+                 <div class="input-group"> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el registro. -->
+                    <label for="reg-password">Contraseña *</label>
+                    <input type="password" id="reg-password" placeholder="Mínimo 8 caracteres" required> </div> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el registro. -->
+                <div class="input-group"> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el registro. -->
+                    <label for="reg-password">Contraseña *</label> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el registro. -->
+                    <input type="password" id="reg-password" placeholder="Mínimo 8 caracteres" required> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el registro. -->
+                </div> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el registro. -->
+
+                <div class="input-group"> <!-- Un campo adicional para que el usuario ingrese su nombre completo, que se muestra debajo de los campos de correo electrónico y contraseña. -->
+                    <label for="nombre">Nombre completo</label> <!-- Un campo adicional para que el usuario ingrese su nombre completo, que se muestra debajo de los campos de correo electrónico y contraseña. -->
+                    <input type="text" id="nombre" placeholder="Tu nombre"> <!-- Un campo adicional para que el usuario ingrese su nombre completo, que se muestra debajo de los campos de correo electrónico y contraseña. -->
+                </div>
+                
+                <div class="input-group"> <!-- Un campo adicional para que el usuario seleccione su nivel de condición física, que se muestra como un menú desplegable. -->
+                    <label for="nivel">Nivel de condición física</label> <!-- Un campo adicional para que el usuario seleccione su nivel de condición física, que se muestra como un menú desplegable. -->
+                    <select id="nivel" style="width: 100%; padding: 0.8rem; border: 1.5px solid #4b1d6e; border-radius: 6px; background: white;"> <!-- Un campo adicional para que el usuario seleccione su nivel de condición física, que se muestra como un menú desplegable. 
+                        El estilo en línea se utiliza para aplicar estilos similares a los campos de entrada para mantener la consistencia visual. -->
+                        <option value="principiante">Principiante</option> <!-- Opciones para que el usuario seleccione su nivel de condición física, que se muestra como un menú desplegable. 
+                        El estilo en línea se utiliza para aplicar estilos similares a los campos de entrada para mantener la consistencia visual. -->   
+                        <option value="intermedio">Intermedio</option> <!-- Opciones para que el usuario seleccione su nivel de condición física, que se muestra como un menú desplegable. 
+                        El estilo en línea se utiliza para aplicar estilos similares a los campos de entrada para mantener la consistencia visual. -->
+                        <option value="avanzado">Avanzado</option> <!-- Opciones para que el usuario seleccione su nivel de condición física, que se muestra como un menú desplegable. 
+                        El estilo en línea se utiliza para aplicar estilos similares a los campos de entrada para mantener la consistencia visual. -->
+                    </select>
+                </div> <!-- Un campo adicional para que el usuario seleccione su nivel de condición física, que se muestra como un menú desplegable. -->
+
+                <button type="submit" class="btn-login">Registrarse</button> <!-- El botón de envío del formulario, que tiene un estilo específico definido por la clase "btn-login".
+                 Al hacer clic en este botón, el formulario se enviará a la URL especificada en el atributo "action" del formulario (en este caso, no se especifica una URL, lo que significa que el formulario no se enviará a ningún lado). -->
+            </form> <!-- Cierre del formulario de registro -->
+        </section> <!-- Cierre de la tarjeta que contiene el formulario de registro -->
+    </main> <!-- Cierre del contenedor principal -->
+</body> <!-- Cierre del cuerpo del documento -->
+</html> <!-- Este es el código HTML para la página de registro de SportClub. La estructura es similar a las otras páginas, con un contenedor principal que contiene una tarjeta con el formulario de registro.
+ El formulario incluye campos para el correo electrónico, contraseña, nombre completo y nivel de condición física, así como un botón para enviar el formulario. También hay un enlace para volver a la página de inicio de sesión. -->

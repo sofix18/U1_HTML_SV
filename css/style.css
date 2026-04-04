@@ -1,97 +1,140 @@
 /* 1. Reset y Modelo de Cajas */
 * { /* El selector universal (*) se utiliza para aplicar estilos a todos los elementos de la página. */
-    margin: 0; /* Reset: Elimina márgenes y padding predeterminados de todos los elementos para evitar inconsistencias entre navegadores. */
-    padding: 0; /* Reset: Elimina márgenes y padding predeterminados de todos los elementos para evitar inconsistencias entre navegadores. */
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño final */
+    margin: 0; /* Elimina el margen predeterminado de todos los elementos para evitar inconsistencias entre navegadores. */
+    padding: 0; /* Elimina el relleno predeterminado de todos los elementos para evitar inconsistencias entre navegadores. */
+    box-sizing: border-box;  /* Cambia el modelo de cajas para que el padding y el borde se incluyan dentro del ancho y alto total del elemento, lo que facilita el diseño. */
 }
 
-/* 2. Cuerpo: Fondo claro y centrado total */
-body { /* El cuerpo de la página, que tiene un fondo claro y utiliza Flexbox para centrar el contenido. */
-    background-color: #f5f5f7; 
-    display: flex; /* Flexbox para centrar el contenido tanto horizontal como verticalmente. */
-    justify-content: center; /* Centra horizontalmente el contenido dentro del body. */
-    align-items: center; /* Centra verticalmente el contenido dentro del body. */
-    height: 100vh; /* Altura completa de la ventana para centrar verticalmente */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible. */
+/* 2. Cuerpo y Centrado */
+body {
+    background-color: #f5f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegúrate de que diga min-height */
+    margin: 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Borra todo lo que hay dentro de .container o déjalo vacío */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh; /* Agrega esto para asegurar que el centro sea real */
+}
+
 
 /* 3. El Cuadro (Card) */
-.card { /* El contenedor principal del formulario de login, que tiene un fondo blanco, sombra y bordes redondeados para destacarse del fondo. */
-    background-color: white; /* Fondo blanco para destacar el formulario. */
-    padding: 2.5rem;           /* Padding: Espacio interno solicitado */
-    border: 1px solid #ddd;    /* Border: Borde solicitado */
-    border-radius: 12px; /* Bordes redondeados para un aspecto más suave y moderno. */
-    width: 380px; /* Ancho fijo para mantener la consistencia del diseño. */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Sombra suave para dar profundidad al card. */
-    text-align: center; /* Centra el texto dentro del card para un diseño más equilibrado. */
-}
-
-/* 4. El Logo y Título */
-.logo { 
-    display: block;  /* Permite usar márgenes automáticos para centrar */
-    margin-left: auto;  /* Centra a la izquierda */
-    margin-right: auto;  /* Centra a la derecha */
-    width: 250px;  /* Tamaño controlado para que no se vea gigante */
-    height: auto;  /* Mantiene la proporción de la imagen */
-    margin-bottom: 1.5rem; /* Espacio solicitado con el título */
-}
-
-/* 5. Inputs del Formulario */
-.input-group { /* El contenedor de cada grupo de entrada (email y contraseña), que incluye la etiqueta y el campo de entrada. */
-    margin-bottom: 1.2rem; /* Margin: Margen exterior solicitado para separar cada grupo de entrada. */
-    text-align: left; /* Alinea el texto a la izquierda dentro del grupo de entrada */
-}
-
-label { /* Las etiquetas de los campos de entrada (Email y Contraseña), que se muestran encima de cada campo. */
-    display: block; /* Hace que la etiqueta ocupe toda la línea, lo que permite que el campo de entrada se muestre debajo de ella. */
-    margin-bottom: 0.5rem; /* Margin: Margen exterior solicitado */
-    font-weight: 600; /* Font-weight: Peso de fuente solicitado */
-    color: #4b1d6e; /* Morado SportClub */
-}
-
-input { /* Los campos de entrada para el email y la contraseña, que tienen un borde, padding y bordes redondeados para mejorar su apariencia. */
-    width: 100%; /* Hace que el campo de entrada ocupe todo el ancho del contenedor padre (input-group). */
-    padding: 0.8rem; /* Padding: Espacio interno solicitado */
-    border: 1.5px solid #4b1d6e; /* Border: Borde solicitado */
-    border-radius: 6px; /* Bordes redondeados para un aspecto más suave y moderno. */
-    outline-color: #fdb813; /* Amarillo SportClub al seleccionar */
-}
-
-/* 6. Botón de Inicio de Sesión */
-.btn-login { /* El botón de inicio de sesión, que tiene un fondo morado, texto blanco, bordes redondeados y un efecto hover para indicar que es interactivo. */
-    width: 100%; /* Hace que el botón ocupe todo el ancho del contenedor padre (formulario). */
-    padding: 0.9rem; /* Padding: Espacio interno solicitado */ 
-    background-color: #4b1d6e; /* Fondo morado para destacar el botón. */ 
-    color: white; /* Color del texto en blanco para contraste con el fondo morado. */
-    border: none; /* Sin borde para un diseño más limpio. */
-    border-radius: 6px; /* Bordes redondeados para un aspecto más suave y moderno. */
-
-    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón para indicar que es interactivo. */
-    font-weight: bold; /* Font-weight: Peso de fuente solicitado para el texto del botón. */
-    font-size: 1rem; /* Font-size: Tamaño de fuente solicitado */
-    margin-top: 1rem; /* Margin-top: Margen superior solicitado */
+.card {
+    background-color: white;
+    padding: 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
     
-    /* Agrega esta línea justo debajo del comentario: */
-    transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo al hacer hover, lo que mejora la experiencia del usuario al interactuar con el botón. */
-} 
-
-.btn-login:hover { /* Efecto hover para el botón de inicio de sesión, que cambia el fondo a un color más oscuro para indicar que es interactivo. */
-    background-color: #3a1656; /* Color más oscuro al pasar el mouse para indicar que el botón es interactivo. */
-} 
-
-/* 7. Enlaces de recuperación y registro */
-.footer-links { /* El contenedor para los enlaces de "¿Olvidaste tu contraseña?" y "Registrarse", que se muestra debajo del formulario. */
-    margin-top: 1.5rem; /* Margin: Margen exterior solicitado para separar el contenedor de los enlaces del formulario. */
-    display: flex;/* Flexbox para organizar los enlaces en una fila. */
-    justify-content: space-between; /* Justifica el contenido para que los enlaces estén separados */
-    font-size: 0.85rem; /* Tamaño de fuente solicitado */
+    /* ESTO FIJA EL DISEÑO */
+    width: 380px; 
+    max-width: 90%; /* Para que en celulares no se corte */
+    
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+    display: block; /* Asegura que se comporte como un bloque */
 }
 
-.footer-links a {
-    color: #4b1d6e; /* Color de los enlaces */
-    text-decoration: none; /* Sin subrayado */
+/* 4. Botón Volver (Nuevo) */
+.back-container { /* Un contenedor para el botón de volver, que se posiciona en la parte superior izquierda de la tarjeta. */   
+    text-align: left; /* Alinea el contenido del contenedor a la izquierda para que el botón de volver esté en la esquina superior izquierda de la tarjeta. */
+    margin-bottom: 0.5rem; /* Un pequeño margen inferior para separar el botón de volver del resto del contenido de la tarjeta. */
 }
 
-.footer-links a:hover { /* Efecto hover para los enlaces, que subraya el texto al pasar el mouse para indicar que son interactivos. */
-    text-decoration: underline; /* Subrayado al pasar el mouse */
+.btn-back { /* Un enlace estilizado como botón para volver a la página anterior. */
+    text-decoration: none;  /* Elimina el subrayado predeterminado de los enlaces para que se vea más como un botón. */
+    color: #4b1d6e; /* Un color púrpura oscuro para el texto del botón de volver, que combina con el esquema de colores general de la página. */
+    font-size: 0.85rem; /* Un tamaño de fuente más pequeño para el botón de volver. */
+    font-weight: 500; /* Un peso de fuente medio para el botón de volver, que lo hace legible pero no tan prominente como el título o el botón de inicio de sesión. */
+     transition: color 0.3s; /* Agrega una transición suave para el cambio de color. */
+}
+
+.btn-back:hover { /* Estilos para el estado de hover del botón de volver, que se activan cuando el usuario pasa el cursor sobre el botón. */
+    color: #3a1656; /* Cambia el color del texto a un púrpura más oscuro cuando el usuario pasa el cursor sobre el botón de volver, proporcionando una retroalimentación visual. */
+    text-decoration: underline; /* Agrega un subrayado al texto cuando el usuario pasa el cursor sobre el botón. */
+}
+
+/* 5. Logo y Título */
+.logo { /* Un contenedor para el logo, que se posiciona en la parte superior de la tarjeta. */
+    display: block; /* El logo se muestra como un bloque para que ocupe toda la línea y se centre correctamente. */
+    margin: 0 auto 1rem auto; /* Bajamos un poco el margen inferior */
+    width: 180px; /* Un poquito más chico para que todo suba */
+    height: auto; /* Mantiene la proporción del logo al ajustar su ancho. */
+}
+
+h2 { /* Estilos para el título de la tarjeta, que se muestra debajo del logo. */
+    font-size: 1.4rem; /* Tamaño más discreto */
+    margin-bottom: 1.5rem; /* Un margen inferior para separar el título del formulario de inicio de sesión. */
+    color: #333; /* Un color de texto oscuro para el título, que proporciona un buen contraste con el fondo blanco de la tarjeta. */
+    font-weight: 600; /* Un peso de fuente seminegrita para el título, que lo hace destacar sin ser demasiado pesado. */
+}
+
+
+/* 6. Inputs y Botón Login */
+.input-group { /* Un contenedor para cada grupo de entrada (label + input), que se utiliza para organizar el formulario de inicio de sesión. */
+    margin-bottom: 1.2rem; /* Un margen inferior para separar cada grupo de entrada del siguiente, lo que mejora la legibilidad y la apariencia del formulario. */
+    text-align: left; /* Alinea el texto a la izquierda dentro de cada grupo de entrada para que las etiquetas estén alineadas con los campos de entrada. */
+}
+
+label { /* Estilos para las etiquetas de los campos de entrada, que se muestran encima de cada campo de entrada. */
+    display: block; /* Las etiquetas se muestran como bloques para que cada una ocupe toda la línea y se coloque encima de su campo de entrada correspondiente. */
+    margin-bottom: 0.5rem; /* Un margen inferior para separar cada etiqueta de su campo de entrada correspondiente, lo que mejora la legibilidad. */
+    font-weight: 600; /* Un peso de fuente seminegrita para las etiquetas, que las hace destacar y fáciles de leer. */
+    color: #4b1d6e; /* Un color púrpura oscuro para las etiquetas, que combina con el esquema de colores general de la página. */
+}
+
+input { /* Estilos para los campos de entrada, que se utilizan para que el usuario ingrese su correo electrónico y contraseña. */
+    width: 100%; /* Establece el ancho de los campos de entrada al 100% del contenedor padre, lo que permite que se ajusten al ancho de la tarjeta. */
+    padding: 0.8rem; /* Un relleno interno para que el texto dentro de los campos de entrada no esté pegado a los bordes, lo que mejora la legibilidad. */
+    border: 1.5px solid #4b1d6e; /* Un borde de color púrpura oscuro para los campos de entrada, que combina con el esquema de colores general de la página. */
+    border-radius: 6px; /* Bordes redondeados para los campos de entrada, que les da un aspecto más suave y moderno. */
+}
+
+.btn-login { /* Estilos para el botón de inicio de sesión, que se muestra debajo de los campos de entrada. */
+    width: 100%; /* Establece el ancho del botón de inicio de sesión al 100% del contenedor padre, lo que permite que se ajuste al ancho de la tarjeta. */
+    padding: 0.9rem; /* Un relleno interno para que el texto dentro del botón no esté pegado a los bordes, lo que mejora la legibilidad y la apariencia del botón. */
+    background-color: #4b1d6e; /* Un color de fondo púrpura oscuro para el botón de inicio de sesión, que combina con el esquema de colores general de la página y lo hace destacar como un elemento interactivo. */
+    color: white; /* Un color de texto blanco para el botón de inicio de sesión, que proporciona un buen contraste con el fondo púrpura oscuro del botón. */
+    border: none; /* Elimina el borde predeterminado del botón para que se vea más moderno y limpio. */
+    border-radius: 6px; /* Bordes redondeados para el botón de inicio de sesión, que le da un aspecto más suave y moderno. */
+    cursor: pointer; /* Cambia el cursor a un puntero cuando el usuario pasa el cursor sobre el botón de inicio de sesión, indicando que es un elemento interactivo. */
+    font-weight: bold; /* Un peso de fuente negrita para el texto del botón de inicio de sesión, que lo hace destacar y fácil de leer. */
+    transition: background-color 0.3s; /* Agrega una transición suave para el cambio de color de fondo cuando el usuario pasa el cursor sobre el botón. */
+}
+
+.btn-login:hover { /* Estilos para el estado de hover del botón de inicio de sesión, que se activan cuando el usuario pasa el cursor sobre el botón. */
+    background-color: #3a1656; /* Cambia el color de fondo a un púrpura más oscuro cuando el usuario pasa el cursor sobre el botón de inicio de sesión, proporcionando una retroalimentación visual. */
+}
+
+/* 7. Footer Links */
+.footer-links { /* Un contenedor para los enlaces de "¿Olvidaste tu contraseña?" y "Registrarse", que se muestra debajo del formulario de inicio de sesión. */
+    margin-top: 1.5rem; /* Un margen superior para separar el contenedor de enlaces del formulario de inicio de sesión, lo que mejora la apariencia y la legibilidad. */
+    display: flex; /* Utiliza Flexbox para organizar los enlaces dentro del contenedor. */
+    justify-content: space-between; /* Distribuye los enlaces de manera uniforme a lo largo del contenedor, con espacio entre ellos. */
+    font-size: 0.85rem; /* Un tamaño de fuente más pequeño para los enlaces, que los hace menos prominentes que el título y el botón de inicio de sesión, pero aún legibles. */
+}
+
+.footer-links a { /* Estilos para los enlaces dentro del contenedor de enlaces del pie de página. */
+    color: #4b1d6e; /* Un color púrpura oscuro para los enlaces, que combina con el esquema de colores general de la página. */
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces para que se vean más limpios y modernos. */
+     transition: color 0.3s; /* Agrega una transición suave para el cambio de color cuando el usuario pasa el cursor sobre los enlaces. */      
+}
+
+.footer-links a:hover { /* Estilos para el estado de hover de los enlaces dentro del contenedor de enlaces del pie de página, que se activan cuando el usuario pasa el cursor sobre los enlaces. */
+    color: #3a1656; /* Cambia el color de los enlaces a un púrpura más oscuro cuando el usuario pasa el cursor sobre ellos, proporcionando una retroalimentación visual. */
+    text-decoration: underline; /* Agrega un subrayado a los enlaces cuando el usuario pasa el cursor sobre ellos, proporcionando una retroalimentación visual. */
 }
