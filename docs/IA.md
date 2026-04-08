@@ -48,3 +48,17 @@ Resultado final con el modelo de cajas aplicado, textos en español y navegació
 1. **Orden Profesional:** Decidí separar el código en carpetas css/  image/ y mover la documentación a docs/. Esto facilita el escalamiento del proyecto.
 2. **Diseño Responsivo:** Usé Flexbox para que el login sea "Mobile First", viéndose bien tanto en computadoras como en celulares.
 3. **Control de Versiones:** Usé Git para mantener un historial de cambios. Además, aseguré la integridad de los datos usando el atributo require en todos los campos obligatorios del formulario.
+
+
+# Estructura del Proyecto SportClub
+
+## Archivos Actuales
+- `login.html`: Interfaz de acceso (antes index.html).
+- `register.html`: Formulario de nuevos usuarios.
+- `recover.html`: Recuperación de cuenta.
+- `css/style.css`: Estilos globales.
+- `image/`: Carpeta de recursos visuales.
+
+## Próximos Pasos
+1. Crear `index.html` (Nueva Landing Page motivacional).
+2. Implementar Dashboards por perfil (Usuario, Coach, Admin).
