@@ -1,0 +1,115 @@
+/* landing.css - Estilos exclusivos para la página de inicio */
+
+:root { /* Variables de color para mantener la consistencia y facilitar cambios futuros */
+    --morado: #2E1A47; 
+    --amarillo: #F2B705; 
+    --blanco: #FFFFFF;
+}
+
+body { /* Estilos básicos para el cuerpo de la página */
+    margin: 0; /* Elimina el margen predeterminado del navegador para que el diseño sea más limpio */
+    padding: 0; /* Elimina el padding predeterminado del navegador */
+    font-family: Arial, sans-serif; /* Fuente legible y moderna */
+    background-color: var(--blanco); /* Fondo blanco para un aspecto limpio y profesional */
+    color: var(--morado); /* Color de texto principal para mantener la coherencia con la paleta de colores */
+    /* Esto ayuda a que el zoom no rompa el diseño */   
+    overflow-x: hidden;  /* Evita que aparezca una barra de desplazamiento horizontal cuando se hace zoom, manteniendo el diseño intacto. */
+}
+
+/* Contenedor para que no se pegue a los bordes en pantallas grandes */
+.container { /* Un contenedor centralizado para limitar el ancho del contenido y mantenerlo legible en pantallas grandes. */
+    max-width: 1100px; /* Ancho máximo para evitar que el contenido se extienda demasiado en pantallas grandes, lo que mejora la legibilidad. */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 0 20px; /* Espaciado horizontal para que el contenido no esté pegado a los bordes en pantallas pequeñas */
+    text-align: center; /* Centra el texto dentro del contenedor para un diseño más equilibrado */
+}
+
+/* HEADER: Logo arriba y al medio */
+.main-header { /* Estilos para el encabezado principal, que incluye el logo y el nombre del sitio. */
+    padding: 40px 0; /* Espaciado vertical para separar el encabezado del resto del contenido, haciendo que el logo destaque más. */
+    background-color: var(--blanco); /* Fondo blanco para mantener la coherencia con el diseño general y hacer que el logo resalte. */
+}
+
+.logo-main { /* Estilos para el logo principal, que es el elemento más destacado del encabezado. */
+    width: 500px; /* Antes era 350px, ahora es más imponente */ 
+    max-width: 95%; /* Para que en celular no se corte */
+    height: auto; /* Mantiene la proporción del logo al cambiar el tamaño */
+    display: block; /* Hace que el logo se comporte como un bloque para centrarlo correctamente */
+    margin: 0 auto; /* Centra el logo horizontalmente dentro del encabezado */
+}
+
+/* HERO: La frase motivacional */
+.hero { /* Estilos para la sección hero, que es la primera sección que los visitantes ven al llegar a la página. */
+    padding: 50px 0; /* Espaciado vertical para separar la sección hero del encabezado y del resto del contenido, creando un impacto visual fuerte. */
+}
+
+.hero h1 { /* Estilos para el título principal dentro de la sección hero, que es la frase motivacional. */
+    /* El primer número (1.5rem) es el tamaño mínimo, el último (2.2rem) es el máximo */
+    font-size: clamp(1.5rem, 4vw, 2.2rem);  /* El tamaño del texto se ajusta automáticamente entre 1.5rem y 2.2rem según el ancho de la pantalla, asegurando que la frase motivacional sea legible y tenga un impacto visual adecuado en diferentes dispositivos. */
+    margin-bottom: 15px; /* Espacio debajo del título para separar la frase motivacional del párrafo que la sigue, mejorando la legibilidad y el diseño visual. */
+    font-weight: 600; /* Un poco menos negrita para que no compita con el logo */
+}
+
+
+.hero p { /* Estilos para el párrafo dentro de la sección hero, que proporciona información adicional o una llamada a la acción. */
+    font-size: 1.2rem; /* Tamaño de fuente ligeramente más grande para mejorar la legibilidad y destacar el mensaje adicional que acompaña a la frase motivacional. */
+    max-width: 700px;   /* Limita el ancho del párrafo para mejorar la legibilidad, evitando que las líneas sean demasiado largas en pantallas grandes. */
+    margin: 0 auto 30px; /* Centra el párrafo horizontalmente y agrega un espacio debajo para separar esta sección del siguiente contenido, creando un diseño más limpio y organizado. */
+    line-height: 1.6; /* Aumenta el espacio entre líneas para mejorar la legibilidad, especialmente en dispositivos móviles donde el texto puede ser más difícil de leer. */
+    font-style: italic; /* Agrega un estilo cursivo para darle un toque más motivacional y diferenciarlo del resto del texto en la página. */
+}
+
+/* Botón llamativo */
+.btn-ingresar { /* Estilos para el botón de llamada a la acción, que invita a los visitantes a ingresar o registrarse. */
+    display: inline-block; /* Hace que el botón se comporte como un elemento en línea pero con propiedades de bloque, lo que permite agregar padding y margen de manera efectiva. */
+    background-color: var(--amarillo); /* Color de fondo amarillo para que el botón destaque y llame la atención de los visitantes, incentivándolos a hacer clic. */
+    color: var(--morado); /* Color de texto morado para mantener la coherencia con la paleta de colores y asegurar un buen contraste con el fondo amarillo, mejorando la legibilidad del texto en el botón. */
+    padding: 15px 35px; /* Espaciado interno para hacer que el botón sea más grande y fácil de clicar, mejorando la experiencia del usuario. */
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces para que el botón tenga un aspecto más limpio y profesional. */
+    font-weight: bold; /* Hace que el texto del botón sea más prominente y fácil de leer, aumentando la efectividad de la llamada a la acción. */
+    border-radius: 8px; /* Bordes redondeados para darle un aspecto más moderno y amigable al botón, haciéndolo más atractivo visualmente. */
+    font-size: 1.1rem; /* Tamaño de fuente ligeramente más grande para mejorar la legibilidad del texto en el botón, asegurando que el mensaje de la llamada a la acción sea claro y fácil de entender. */
+    transition: transform 0.2s, background 0.2s; /* Agrega una transición suave para los efectos de hover, haciendo que el botón se sienta más interactivo y atractivo al usuario. */
+}
+
+.btn-ingresar:hover { /* Estilos para el estado hover del botón de llamada a la acción, que proporciona retroalimentación visual cuando los usuarios pasan el cursor sobre el botón. */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón al pasar el cursor sobre él, creando un efecto de zoom que hace que el botón se sienta más interactivo y atractivo para los usuarios. */
+    background-color: #d9a404; /* Cambia el color de fondo a un tono más oscuro de amarillo al pasar el cursor, proporcionando una retroalimentación visual adicional que mejora la experiencia del usuario y hace que el botón sea más llamativo. */
+}
+
+/* SECCIÓN INFO: Misión y Visión lado a lado */
+.info-section { /* Estilos para la sección de información, que incluye la misión y visión de la empresa. Esta sección se muestra lado a lado en pantallas grandes y se adapta a una disposición vertical en dispositivos móviles. */
+    display: flex; /* Utiliza Flexbox para organizar el contenido en una fila, permitiendo que la misión y visión se muestren lado a lado en pantallas grandes. */
+    flex-wrap: wrap; /* Para que en celular se pongan uno abajo del otro */
+    gap: 30px; /* Espacio entre los elementos de la sección para evitar que estén demasiado juntos, mejorando la legibilidad y el diseño visual. */
+    padding: 60px 0; /* Espaciado vertical para separar esta sección del resto del contenido, creando un diseño más limpio y organizado. */
+    justify-content: center; /* Centra los elementos dentro de la sección, asegurando que la misión y visión estén alineadas de manera equilibrada en el espacio disponible. */
+}
+
+.card { /* Estilos para las tarjetas de misión y visión, que contienen información importante sobre la empresa. Estas tarjetas tienen un diseño limpio y moderno, con un borde superior destacado para diferenciarlas visualmente. */
+    flex: 1; /* Permite que las tarjetas se expandan para llenar el espacio disponible, asegurando que se vean equilibradas y ocupen un espacio adecuado en la sección de información. */
+    min-width: 300px; /* Se ajusta solo según el zoom */ 
+    background: #f9f9f9; /* Fondo ligeramente gris para diferenciar las tarjetas del fondo blanco de la página, creando un contraste visual que mejora la legibilidad y el diseño. */
+    padding: 30px; /* Espaciado interno para que el contenido dentro de las tarjetas no esté pegado a los bordes, mejorando la legibilidad y el diseño visual. */
+    border-radius: 12px; /* Bordes redondeados para darle un aspecto más moderno y amigable a las tarjetas, haciéndolas más atractivas visualmente. */
+    border-top: 5px solid var(--amarillo); /* Un borde superior amarillo para destacar las tarjetas y crear un punto focal visual que atraiga la atención de los visitantes hacia la misión y visión de la empresa. */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra suave para darle profundidad a las tarjetas, haciendo que se destaquen del fondo y mejorando el diseño visual general. */
+}
+
+.card h3 { /* Estilos para los títulos dentro de las tarjetas de misión y visión, que son elementos clave para comunicar la información de manera clara y efectiva. Estos estilos aseguran que los títulos sean legibles y visualmente atractivos, manteniendo la coherencia con el diseño general de la página. */
+    margin-top: 0; /* Elimina el margen superior predeterminado para que el título esté alineado con el borde superior de la tarjeta, creando un diseño más limpio y profesional. */
+    color: var(--morado); /* Color de texto morado para mantener la coherencia con la paleta de colores y asegurar que los títulos sean legibles y se destaquen dentro de las tarjetas. */
+}
+
+/* FOOTER */
+footer { /* Estilos para el pie de página, que proporciona información adicional o enlaces al final de la página. El diseño es simple y limpio para no competir con el contenido principal. */
+    padding: 40px 0; /* Espaciado vertical para separar el pie de página del resto del contenido, creando un diseño más limpio y organizado. */
+    font-size: 0.9rem;  /* Tamaño de fuente más pequeño para el pie de página, ya que generalmente contiene información secundaria o enlaces, asegurando que no compita visualmente con el contenido principal de la página. */
+    color: #777; /* Color de texto gris para el pie de página, proporcionando un contraste suave con el fondo blanco y asegurando que la información en el pie de página sea legible sin distraer del contenido principal. */
+}
+
+/* AJUSTES PARA CELULAR (Responsivo) */
+@media (max-width: 600px) { /* Estilos específicos para dispositivos con un ancho máximo de 600px, que es común para teléfonos móviles. Estos estilos aseguran que la página se vea bien y sea fácil de usar en pantallas pequeñas, adaptando el diseño para mejorar la legibilidad y la experiencia del usuario. */
+    .main-header { padding: 20px 0; } /* Reduce el padding del encabezado para que el logo no ocupe demasiado espacio en pantallas pequeñas, asegurando que el diseño se mantenga equilibrado y que el logo siga siendo visible sin abrumar la pantalla. */
+    .hero { padding: 30px 0; }   /* Reduce el padding de la sección hero para que el contenido no ocupe demasiado espacio vertical en pantallas pequeñas, mejorando la experiencia del usuario y asegurando que la frase motivacional siga siendo visible sin necesidad de desplazarse demasiado. */
+}
