@@ -45,7 +45,7 @@ Resultado final con el modelo de cajas aplicado, textos en español y navegació
 
 ## 5. Justificación Técnica:
 
-1. **Orden Profesional:** Decidí separar el código en carpetas css/  image/ y mover la documentación a docs/. Esto facilita el escalamiento del proyecto.
+1. **Orden:** Decidí separar el código en carpetas css/  image/ y mover la documentación a docs/. Esto facilita el que se entienda mejor el orden del proyecto.
 2. **Diseño Responsivo:** Usé Flexbox para que el login sea "Mobile First", viéndose bien tanto en computadoras como en celulares.
 3. **Control de Versiones:** Usé Git para mantener un historial de cambios. Además, aseguré la integridad de los datos usando el atributo require en todos los campos obligatorios del formulario.
 
@@ -62,3 +62,4 @@ Resultado final con el modelo de cajas aplicado, textos en español y navegació
 ## Próximos Pasos
 1. Crear `index.html` (Nueva Landing Page motivacional).
 2. Implementar Dashboards por perfil (Usuario, Coach, Admin).
+

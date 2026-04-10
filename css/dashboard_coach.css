@@ -1,202 +1,120 @@
-:root { /* Variables de color para mantener la coherencia en el diseño y facilitar futuros cambios de estilo. */
-    --rojo-principal: #D32F2F; 
-    --rojo-oscuro: #B71C1C;
-    --gris-fondo: #f4f4f4;
-    --blanco: #ffffff;
-}
+:root { /* Variables de color para el dashboard del coach */
+    --rojo-principal: #D32F2F; /* Rojo vibrante para elementos destacados */
+    --rojo-oscuro: #B71C1C; /* Rojo más oscuro para el sidebar */
+    --gris-fondo: #f4f4f4; /* Gris claro para el fondo general */
+    --blanco: #ffffff; /* Blanco puro para tarjetas y tablas */
+    --verde-ok: #28a745; /* Verde para botones de acción positiva */
+} 
 
-body { /* Estilos básicos para el cuerpo de la página, que establecen la fuente, el color de fondo y eliminan márgenes y padding predeterminados para crear un lienzo limpio para el diseño del dashboard. */
-    margin: 0; /* Elimina el margen predeterminado del navegador para que el contenido ocupe todo el ancho de la página, permitiendo un diseño más fluido y moderno. */
-    padding: 0; /* Elimina el padding predeterminado del navegador para que el contenido esté alineado con los bordes de la página, creando un diseño más limpio y profesional. */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible para mejorar la experiencia del usuario, asegurando que el texto sea fácil de leer en diferentes dispositivos y tamaños de pantalla. */
-    background-color: var(--gris-fondo); /* Color de fondo gris claro para proporcionar un contraste suave con los elementos del dashboard, mejorando la legibilidad y el diseño visual general. */
-    overflow-x: hidden; /* Evita que aparezca una barra de desplazamiento horizontal en caso de que algún elemento se desborde, asegurando que el diseño se mantenga limpio y sin distracciones. */
+body { 
+    margin: 0; padding: 0; /* Reset de márgenes y padding */
+    font-family: 'Segoe UI', sans-serif; /* Fuente moderna y legible */
+    background-color: var(--gris-fondo); /* Fondo gris claro para todo el dashboard */
 }
 
 /* NAVBAR */
-.dash-nav { /* Estilos para la barra de navegación del dashboard, que proporciona acceso a diferentes secciones y funcionalidades. El diseño es limpio y moderno, con un fondo rojo para destacar la barra y un diseño flexible para acomodar diferentes elementos de navegación. */
-    background-color: var(--rojo-principal); /* Color de fondo rojo para que la barra de navegación destaque y sea fácilmente identificable, proporcionando un punto focal visual para los usuarios. */
-    color: var(--blanco); /* Color de texto blanco para asegurar un buen contraste con el fondo rojo, mejorando la legibilidad de los elementos de navegación. */
-    padding: 0 30px; /* Espaciado horizontal para que los elementos dentro de la barra de navegación no estén pegados a los bordes, creando un diseño más limpio y organizado. */
-    display: flex;  /* Utiliza Flexbox para organizar los elementos dentro de la barra de navegación, permitiendo una distribución flexible y alineación de los elementos. */
-    justify-content: space-between; /* Distribuye los elementos dentro de la barra de navegación con espacio entre ellos, asegurando que el logo esté alineado a la izquierda y los enlaces de navegación estén alineados a la derecha, creando un diseño equilibrado y profesional. */
-    align-items: center; /* Alinea verticalmente los elementos dentro de la barra de navegación para que estén centrados, mejorando la apariencia visual y la legibilidad. */
-    height: 70px; /* Altura fija para la barra de navegación, asegurando que tenga un tamaño consistente y proporcione suficiente espacio para los elementos de navegación sin ocupar demasiado espacio vertical en la página. */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave para darle profundidad a la barra de navegación, haciendo que se destaque del fondo y mejorando el diseño visual general. */
+.dash-nav { /* Barra de navegación superior */
+    background-color: var(--rojo-principal); /* Rojo vibrante para destacar la barra de navegación */
+    color: var(--blanco); /* Texto blanco para contraste */
+    padding: 0 30px; /* Espaciado horizontal */
+    display: flex; /* Flexbox para alinear elementos */
+    justify-content: space-between; /* Separar logo y opciones de navegación */
+    align-items: center; /* Centrar verticalmente */
+    height: 70px; /* Altura fija para la barra de navegación */
 }
 
-.logo-dashboard { /* Estilos para el logo dentro de la barra de navegación, que representa la identidad visual del dashboard. El diseño es simple y moderno, con un tamaño de fuente mediano para asegurar que el logo sea visible sin ser abrumador. */
-    font-size: 1.4rem; /* Tamaño mediano solicitado */ 
-    letter-spacing: 0.5px; /* Espaciado entre letras para mejorar la legibilidad y darle un toque más moderno al logo, asegurando que el texto del logo sea fácil de leer y visualmente atractivo. */
+.logo-dashboard { font-size: 1.4rem; } /* Logo del dashboard con un tamaño de fuente más grande para destacar el nombre del coach */
+.nav-right { display: flex; align-items: center; gap: 20px; } /* Contenedor para las opciones de navegación a la derecha */
+.btn-perfil { color: white; text-decoration: none; font-size: 0.9rem; } /* Estilo para el enlace de perfil */
+.btn-perfil:hover { text-decoration: underline; } /* Efecto hover para el enlace de perfil */
+
+.btn-logout { /* Estilo para el botón de cerrar sesión */
+    color: white; text-decoration: none; border: 1px solid white; /* Borde blanco para resaltar el botón */
+    padding: 7px 15px; border-radius: 5px; font-size: 0.9rem; /* Tamaño de fuente más pequeño para el botón de cerrar sesión */
+    transition: 0.3s; /* Transición suave para el efecto hover */
+}
+.btn-logout:hover { background: white; color: var(--rojo-principal); } /* Efecto hover para el botón de cerrar sesión */
+
+/* LAYOUT & SIDEBAR */
+.container-dash { display: flex; min-height: calc(100vh - 70px); } /* Contenedor principal con altura completa menos la barra de navegación */
+
+.sidebar { width: 250px; background-color: var(--rojo-oscuro); padding-top: 10px; flex-shrink: 0; } /* Sidebar con ancho fijo y fondo rojo oscuro */
+.sidebar ul { list-style: none; padding: 0; } /* Eliminar estilos de lista para el menú del sidebar */
+
+.sidebar li a { /* Estilo para los enlaces del menú lateral */
+    color: white; text-decoration: none; /* Espaciado y formato para los enlaces del menú lateral */
+    padding: 15px 25px; display: block; /* Espaciado interno para los enlaces del menú lateral */
+    transition: all 0.3s ease; /* Transición suave para el efecto hover en los enlaces del menú lateral */
+    border-left: 5px solid transparent; /* Borde izquierdo transparente para el efecto hover en los enlaces del menú lateral */
 }
 
-.nav-right { /* Estilos para la sección de la derecha de la barra de navegación, que contiene los enlaces de perfil y logout. El diseño utiliza Flexbox para organizar los elementos de manera horizontal, con un espacio entre ellos para mejorar la legibilidad y la apariencia visual. */
-    display: flex; /* Utiliza Flexbox para organizar los elementos dentro de la sección de la derecha de la barra de navegación, permitiendo una distribución flexible y alineación de los elementos. */
-    align-items: center; /* Alinea verticalmente los elementos dentro de la sección de la derecha de la barra de navegación para que estén centrados, mejorando la apariencia visual y la legibilidad. */
-    gap: 20px; /* Espacio entre los elementos de la sección de la derecha para evitar que estén demasiado juntos, mejorando la legibilidad y el diseño visual. */
+/* Efecto hover menú lateral /* Al pasar el mouse sobre un enlace del menú lateral, se resalta con un fondo semitransparente y un borde izquierdo blanco para indicar la selección */
+.sidebar li a:hover { /* Efecto hover para los enlaces del menú lateral */
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo semitransparente para resaltar el enlace del menú lateral al pasar el mouse */
+    border-left: 5px solid white; /* Borde izquierdo blanco para resaltar el enlace del menú lateral al pasar el mouse */
+    padding-left: 30px; /* Aumentar el padding izquierdo para crear un efecto de desplazamiento al resaltar el enlace del menú lateral */
 }
 
-.btn-perfil { /* Estilos para el enlace de perfil dentro de la barra de navegación, que permite a los usuarios acceder a su perfil o configuración. El diseño es simple y limpio, con un color de texto blanco para asegurar un buen contraste con el fondo rojo y una transición suave para el efecto hover. */
-    color: white; /* Color de texto blanco para asegurar un buen contraste con el fondo rojo, mejorando la legibilidad de los enlaces de navegación. */
-    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces para que el enlace de perfil tenga un aspecto más limpio y profesional. */
-    font-size: 0.9rem; /* Tamaño de fuente ligeramente más pequeño para el enlace de perfil, ya que es un elemento secundario en la barra de navegación, asegurando que no compita visualmente con el logo pero siga siendo legible. */
+/* CONTENIDO */
+.content { flex: 1; padding: 30px; } /* Área de contenido principal con padding para separar del borde y flex para ocupar el espacio restante */
+
+.content-header { margin-bottom: 20px; } /* Encabezado del contenido con margen inferior para separar del resto del contenido */
+.content-header h1 { margin: 0; color: #333; } /* Título del encabezado del contenido con color oscuro para destacar */
+
+/* Selector de Agenda por Día */
+.class-selector { margin-bottom: 25px; } /* Contenedor para el selector de clases por día con margen inferior para separar del resto del contenido */
+.agenda-header h3 { font-size: 1rem; color: #555; margin-bottom: 10px; } /* Encabezado del selector de clases por día con tamaño de fuente más pequeño y color gris para diferenciarlo del título principal */
+
+.selector-grid {  /* Contenedor para los botones de selección de clases por día con diseño de cuadrícula para organizar los botones en filas y columnas */
+    display: flex; gap: 12px; flex-wrap: wrap; /* Flexbox para organizar los botones con espacio entre ellos y permitir que se ajusten a varias filas si es necesario */
+    background: #fff; padding: 15px; border-radius: 10px; /* Fondo blanco para los botones de selección de clases por día con padding y bordes redondeados para un diseño más limpio */
+    border: 1px dashed #ccc;  /* Borde punteado para resaltar el área del selector de clases por día */
 }
 
-.btn-perfil:hover { /* Estilos para el estado hover del enlace de perfil dentro de la barra de navegación, que proporciona retroalimentación visual cuando los usuarios pasan el cursor sobre el enlace. El diseño utiliza un efecto de subrayado para indicar que el enlace es interactivo, mejorando la experiencia del usuario y haciendo que el enlace sea más atractivo visualmente. */
-    text-decoration: underline; /* Agrega un subrayado al pasar el cursor sobre el enlace de perfil, proporcionando una retroalimentación visual clara que indica que el enlace es interactivo, mejorando la experiencia del usuario y haciendo que el enlace sea más atractivo visualmente. */
+.btn-time { /* Estilo para los botones de selección de clases por día con fondo blanco, borde rojo y texto rojo para destacar los botones de acción */
+    background-color: #fff; border: 1px solid var(--rojo-principal); /* Borde rojo para resaltar los botones de selección de clases por día */
+    color: var(--rojo-principal); padding: 10px 18px; /* Espaciado interno para los botones de selección de clases por día */
+    border-radius: 8px; cursor: pointer; font-weight: 600; /* Fuente más gruesa para los botones de selección de clases por día */
+    transition: 0.3s; /* Transición suave para el efecto hover en los botones de selección de clases por día */
 }
 
-.btn-logout { /* Estilos para el enlace de logout dentro de la barra de navegación, que permite a los usuarios cerrar sesión. El diseño es más destacado que el enlace de perfil, con un fondo blanco y un borde para hacerlo resaltar, asegurando que los usuarios puedan encontrar fácilmente la opción de logout. */
-    color: white; /* Color de texto blanco para asegurar un buen contraste con el fondo rojo, mejorando la legibilidad de los enlaces de navegación. */
-    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces para que el enlace de logout tenga un aspecto más limpio y profesional. */
-    border: 1px solid white; /* Agrega un borde blanco para hacer que el enlace de logout destaque dentro de la barra de navegación, proporcionando un punto focal visual que facilita a los usuarios encontrar la opción de cerrar sesión. */
-    padding: 7px 15px; /* Espaciado interno para hacer que el enlace de logout sea más grande y fácil de clicar, mejorando la experiencia del usuario. */
-    border-radius: 5px; /* Bordes redondeados para darle un aspecto más moderno y amigable al enlace de logout, haciéndolo más atractivo visualmente. */ 
-    font-size: 0.9rem; /* Tamaño de fuente ligeramente más pequeño para el enlace de logout, ya que es un elemento secundario en la barra de navegación, asegurando que no compita visualmente con el logo pero siga siendo legible. */
-    transition: 0.3s; /* Agrega una transición suave para los efectos de hover, haciendo que el enlace de logout se sienta más interactivo y atractivo al usuario. */
-}
-
-.btn-logout:hover { /* Estilos para el estado hover del enlace de logout dentro de la barra de navegación, que proporciona retroalimentación visual cuando los usuarios pasan el cursor sobre el enlace. El diseño invierte los colores para crear un efecto de contraste que hace que el enlace sea más atractivo visualmente y claramente interactivo. */
-    background: white; /* Cambia el fondo a blanco al pasar el cursor, creando un efecto de contraste que hace que el enlace de logout sea más atractivo visualmente y claramente interactivo, mejorando la experiencia del usuario. */
-    color: var(--rojo-principal); /* Cambia el color del texto al color rojo principal al pasar el cursor, manteniendo la coherencia con la paleta de colores y asegurando que el enlace de logout siga siendo legible y atractivo visualmente durante la interacción del usuario. */
-}
-
-/* LAYOUT */
-.container-dash { /* Estilos para el contenedor principal del dashboard, que organiza la estructura general de la página. El diseño utiliza Flexbox para crear una disposición de dos columnas, con una barra lateral para la navegación y un área de contenido principal. El contenedor también tiene un mínimo de altura para asegurar que el diseño se mantenga consistente incluso en pantallas más grandes. */
-    display: flex; /* Utiliza Flexbox para organizar el contenido del dashboard en una disposición de dos columnas, permitiendo que la barra lateral y el área de contenido principal se ajusten de manera flexible al tamaño de la pantalla. */
-    min-height: calc(100vh - 70px); /* Establece una altura mínima para el contenedor del dashboard, asegurando que ocupe al menos toda la altura de la ventana del navegador menos la altura de la barra de navegación, lo que ayuda a mantener un diseño equilibrado y evita que el contenido se vea comprimido en pantallas más grandes. */
-}
-
-.sidebar { /* Estilos para la barra lateral del dashboard, que proporciona navegación adicional o acceso a diferentes secciones del dashboard. El diseño es simple y funcional, con un fondo rojo oscuro para diferenciarlo del área de contenido principal y un ancho fijo para mantener la consistencia en el diseño. */
-    width: 250px; /* Ancho fijo para la barra lateral, asegurando que tenga un tamaño consistente y proporcione suficiente espacio para los elementos de navegación sin ocupar demasiado espacio horizontal en la página. */
-    background-color: var(--rojo-oscuro); /* Color de fondo rojo oscuro para diferenciar la barra lateral del área de contenido principal, proporcionando un contraste visual que mejora la legibilidad y el diseño visual general. */
-    padding-top: 10px; /* Espaciado superior para que los elementos dentro de la barra lateral no estén pegados al borde superior, creando un diseño más limpio y organizado. */
-}
-
-.sidebar ul { /* Estilos para la lista dentro de la barra lateral, que contiene los enlaces de navegación. El diseño elimina los estilos predeterminados de la lista para crear un diseño más limpio y profesional, asegurando que los enlaces de navegación sean el foco visual. */
-    list-style: none; /* Elimina los puntos de la lista para que los enlaces de navegación tengan un aspecto más limpio y profesional, asegurando que el diseño se mantenga enfocado en los enlaces sin distracciones visuales. */
-    padding: 0; /* Elimina el padding predeterminado de la lista para que los enlaces de navegación estén alineados con los bordes de la barra lateral, creando un diseño más limpio y organizado. */
-    margin: 0; /* Elimina el margen predeterminado de la lista para que los enlaces de navegación estén alineados con los bordes de la barra lateral, creando un diseño más limpio y organizado. */
-} 
-
-.sidebar li a { /* Estilos para los enlaces dentro de la barra lateral, que proporcionan navegación adicional o acceso a diferentes secciones del dashboard. El diseño es simple y funcional, con un color de texto blanco para asegurar un buen contraste con el fondo rojo oscuro y una transición suave para el efecto hover. */
-    color: white; /* Color de texto blanco para asegurar un buen contraste con el fondo rojo oscuro, mejorando la legibilidad de los enlaces de navegación dentro de la barra lateral. */
-    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces para que los enlaces de navegación dentro de la barra lateral tengan un aspecto más limpio y profesional. */
-    padding: 15px 25px; /* Espaciado interno para hacer que los enlaces de navegación dentro de la barra lateral sean más grandes y fáciles de clicar, mejorando la experiencia del usuario. */
-    display: block; /* Hace que los enlaces de navegación dentro de la barra lateral se comporten como elementos de bloque, lo que permite que el padding se aplique correctamente y que el área clicable sea más grande, mejorando la usabilidad. */
-    transition: 0.2s;   /* Agrega una transición suave para los efectos de hover, haciendo que los enlaces de navegación dentro de la barra lateral se sientan más interactivos y atractivos al usuario. */
-}
-
-.sidebar li a:hover { /* Estilos para el estado hover de los enlaces dentro de la barra lateral, que proporciona retroalimentación visual cuando los usuarios pasan el cursor sobre los enlaces. El diseño cambia el fondo para crear un efecto de resaltado que hace que los enlaces sean más atractivos visualmente y claramente interactivos. */
-    background-color: rgba(255,255,255,0.1); /* Cambia el fondo a un color blanco semitransparente al pasar el cursor, creando un efecto de resaltado que hace que los enlaces de navegación dentro de la barra lateral sean más atractivos visualmente y claramente interactivos, mejorando la experiencia del usuario. */
-}
-
-/* CONTENIDO */ 
-.content { /* Estilos para el área de contenido principal del dashboard, que contiene la información y funcionalidades principales. El diseño es limpio y espacioso, con un fondo blanco para diferenciarlo de la barra lateral y un padding generoso para mejorar la legibilidad y el diseño visual. */
-    flex: 1; /* Permite que el área de contenido principal se expanda para llenar el espacio disponible, asegurando que ocupe la mayor parte del ancho del dashboard mientras la barra lateral mantiene su ancho fijo. */
-    padding: 30px; /* Espaciado interno para que el contenido dentro del área de contenido principal no esté pegado a los bordes, mejorando la legibilidad y el diseño visual. */
-}
-
-.content-header { /* Estilos para el encabezado del contenido dentro del área de contenido principal, que proporciona un título y una descripción para la sección de contenido. El diseño es simple y claro, con un espacio entre el título y la descripción para mejorar la legibilidad y la apariencia visual. */
-    margin-bottom: 30px; /* Espacio debajo del encabezado para separar esta sección del resto del contenido, creando un diseño más limpio y organizado. */
-}
-
-.content-header h1 { /* Estilos para el título dentro del encabezado del contenido, que es un elemento clave para comunicar la información de manera clara y efectiva. Estos estilos aseguran que el título sea legible y visualmente atractivo, manteniendo la coherencia con el diseño general del dashboard. */
-    margin: 0;  /* Elimina el margen predeterminado para que el título esté alineado con el borde superior del encabezado, creando un diseño más limpio y profesional. */
-    font-size: 1.8rem; /* Tamaño de fuente para el título del encabezado, asegurando que sea lo suficientemente grande para destacar como un elemento clave en la sección de contenido, pero sin ser abrumador. */
-    color: #333; /* Color de texto oscuro para el título del encabezado, proporcionando un buen contraste con el fondo blanco del área de contenido principal, mejorando la legibilidad y el diseño visual general. */
-}
-
-.content-header p { /* Estilos para el párrafo dentro del encabezado del contenido, que proporciona información adicional o una descripción para la sección de contenido. El diseño es simple y claro, con un tamaño de fuente más pequeño que el título para diferenciarlo visualmente y un color de texto gris para proporcionar un contraste suave con el fondo blanco. */
-    color: #666; /* Color de texto gris para el párrafo del encabezado, proporcionando un contraste suave con el fondo blanco del área de contenido principal, mejorando la legibilidad y el diseño visual general. */
-    margin-top: 5px; /* Espacio entre el título y el párrafo para mejorar la legibilidad y la apariencia visual, asegurando que el párrafo esté claramente separado del título pero aún así relacionado visualmente. */
-     font-size: 1rem; /* Tamaño de fuente para el párrafo del encabezado, asegurando que sea lo suficientemente grande para ser legible pero más pequeño que el título para mantener la jerarquía visual en la sección de contenido. */
+.btn-time:hover { /* Efecto hover para los botones de selección de clases por día con fondo rojo, texto blanco y un ligero efecto de elevación para indicar que el botón es interactivo */
+    background-color: var(--rojo-principal); /* Fondo rojo para resaltar el botón de selección de clases por día al pasar el mouse */
+    color: white; /* Texto blanco para resaltar el botón de selección de clases por día al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse sobre el botón de selección de clases por día */
+    box-shadow: 0 4px 8px rgba(211, 47, 47, 0.2); /* Sombra para resaltar el botón de selección de clases por día al pasar el mouse */
 }
 
 /* CARDS */
-.card-section { /* Estilos para la sección de tarjetas dentro del área de contenido principal, que muestra estadísticas o información clave de manera visualmente atractiva. El diseño utiliza Flexbox para organizar las tarjetas en una fila con espacio entre ellas, y un margen inferior para separar esta sección del resto del contenido. */
-    display: flex; /* Utiliza Flexbox para organizar las tarjetas dentro de la sección de tarjetas, permitiendo una distribución flexible y alineación de los elementos. */
-    gap: 20px; /* Espacio entre las tarjetas para evitar que estén demasiado juntas, mejorando la legibilidad y el diseño visual. */
-    margin-bottom: 30px; /* Espacio debajo de la sección de tarjetas para separar esta sección del resto del contenido, creando un diseño más limpio y organizado. */
+.card-section { display: flex; gap: 20px; margin-bottom: 30px; } /* Sección de tarjetas con diseño de flexbox para organizar las tarjetas en una fila con espacio entre ellas y margen inferior para separar del resto del contenido */
+.stat-card { /* Estilo para las tarjetas de estadísticas con fondo blanco, padding, bordes redondeados y sombra para dar un efecto de elevación */
+    background: var(--blanco); padding: 20px; border-radius: 12px; /* Flexbox para organizar el contenido de la tarjeta con espacio entre el icono y la información de la tarjeta */
+    display: flex; align-items: center; gap: 20px; flex: 1; /* Flexbox para organizar el contenido de la tarjeta con espacio entre el icono y la información de la tarjeta */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra para dar un efecto de elevación a las tarjetas de estadísticas */
 }
-
-.stat-card { /* Estilos para las tarjetas de estadísticas dentro de la sección de tarjetas, que muestran información clave de manera visualmente atractiva. El diseño es limpio y moderno, con un fondo blanco para diferenciarlo del fondo gris del área de contenido principal, un padding generoso para mejorar la legibilidad y un borde redondeado para darle un aspecto más amigable. */
-    background: var(--blanco); /* Fondo blanco para diferenciar las tarjetas del fondo gris del área de contenido principal, creando un contraste visual que mejora la legibilidad y el diseño visual general. */
-    padding: 20px; /* Espaciado interno para que el contenido dentro de las tarjetas no esté pegado a los bordes, mejorando la legibilidad y el diseño visual. */
-    border-radius: 12px; /* Bordes redondeados para darle un aspecto más moderno y amigable a las tarjetas, haciéndolas más atractivas visualmente. */
-    display: flex; /* Utiliza Flexbox para organizar el contenido dentro de las tarjetas, permitiendo una distribución flexible y alineación de los elementos. */
-    align-items: center; /* Alinea verticalmente los elementos dentro de las tarjetas para que estén centrados, mejorando la apariencia visual y la legibilidad. */
-    gap: 20px; /* Espacio entre el ícono y la información dentro de las tarjetas para evitar que estén demasiado juntos, mejorando la legibilidad y el diseño visual. */
-    min-width: 220px; /* Ancho mínimo para las tarjetas, asegurando que tengan un tamaño consistente y proporcionen suficiente espacio para el contenido sin comprimirse demasiado, mejorando la legibilidad y el diseño visual. */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra suave para darle profundidad a las tarjetas, haciendo que se destaquen del fondo y mejorando el diseño visual general. */
-}
-
-.card-icon { /* Estilos para el ícono dentro de las tarjetas de estadísticas, que proporciona un elemento visual para representar la información de manera más atractiva. El diseño utiliza un tamaño de fuente grande para que el ícono sea claramente visible y un color rojo para mantener la coherencia con la paleta de colores del dashboard. */
-    font-size: 2.2rem; /* Tamaño de fuente grande para que el ícono dentro de las tarjetas de estadísticas sea claramente visible y destaque como un elemento visual clave, mejorando la apariencia visual y la comunicación de la información. */
-}
-
-.card-info h3 { /* Estilos para el título dentro de las tarjetas de estadísticas, que proporciona una descripción breve de la información que se muestra. El diseño es simple y claro, con un tamaño de fuente más pequeño que el valor principal para diferenciarlo visualmente y un color gris para proporcionar un contraste suave con el fondo blanco de las tarjetas. */
-    margin: 0; /* Elimina el margen predeterminado para que el título esté alineado con el borde superior de la tarjeta, creando un diseño más limpio y profesional. */
-    font-size: 0.85rem; /* Tamaño de fuente para el título dentro de las tarjetas de estadísticas, asegurando que sea lo suficientemente pequeño para diferenciarlo visualmente del valor principal pero aún así legible, manteniendo la jerarquía visual en la tarjeta. */
-    color: #888;    /* Color de texto gris para el título dentro de las tarjetas de estadísticas, proporcionando un contraste suave con el fondo blanco de las tarjetas, mejorando la legibilidad y el diseño visual general. */
-    text-transform: uppercase; /* Transforma el texto del título a mayúsculas para darle un aspecto más formal y destacado, mejorando la apariencia visual y la comunicación de la información dentro de las tarjetas de estadísticas. */
-} 
-
-.card-info p { /* Estilos para el valor principal dentro de las tarjetas de estadísticas, que muestra la información clave de manera destacada. El diseño es simple y claro, con un tamaño de fuente grande para que el valor sea claramente visible y un color rojo para mantener la coherencia con la paleta de colores del dashboard. */
-    margin: 5px 0 0; /* Espacio entre el título y el valor principal para mejorar la legibilidad y la apariencia visual, asegurando que el valor esté claramente separado del título pero aún así relacionado visualmente. */
-    font-size: 1.6rem;  /* Tamaño de fuente grande para el valor principal dentro de las tarjetas de estadísticas, asegurando que sea claramente visible y destaque como el elemento más importante en la tarjeta, mejorando la apariencia visual y la comunicación de la información. */
-    font-weight: bold; /* Hace que el valor principal dentro de las tarjetas de estadísticas sea más destacado y fácil de leer, mejorando la apariencia visual y la comunicación de la información. */
-    color: var(--rojo-principal);   /* Color rojo para el valor principal dentro de las tarjetas de estadísticas, manteniendo la coherencia con la paleta de colores del dashboard y asegurando que el valor sea claramente visible y destaque como el elemento más importante en la tarjeta, mejorando la apariencia visual y la comunicación de la información. */
-}
+.card-icon { font-size: 2rem; } /* Estilo para el icono de la tarjeta con un tamaño de fuente grande para destacar el icono */
+.card-info h3 { margin: 0; font-size: 0.8rem; color: #888; text-transform: uppercase; } /* Estilo para el título de la tarjeta con tamaño de fuente pequeño, color gris y texto en mayúsculas para diferenciarlo del valor de la tarjeta */
+.card-info p { margin: 5px 0 0; font-size: 1.5rem; font-weight: bold; color: var(--rojo-principal); } /* Estilo para el valor de la tarjeta con tamaño de fuente grande, fuente en negrita y color rojo para destacar el valor de la tarjeta */
 
 /* TABLA */
-.data-table-container { /* Estilos para el contenedor de la tabla dentro del área de contenido principal, que organiza la tabla de datos de manera visualmente atractiva. El diseño es limpio y moderno, con un fondo blanco para diferenciarlo del fondo gris del área de contenido principal, un padding generoso para mejorar la legibilidad y un borde redondeado para darle un aspecto más amigable. */
-    background: var(--blanco); /* Fondo blanco para diferenciar el contenedor de la tabla del fondo gris del área de contenido principal, creando un contraste visual que mejora la legibilidad y el diseño visual general. */
-    padding: 25px; /* Espaciado interno para que el contenido dentro del contenedor de la tabla no esté pegado a los bordes, mejorando la legibilidad y el diseño visual. */
-    border-radius: 12px; /* Bordes redondeados para darle un aspecto más moderno y amigable al contenedor de la tabla, haciéndolo más atractivo visualmente. */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra suave para darle profundidad al contenedor de la tabla, haciendo que se destaque del fondo y mejorando el diseño visual general. */
+.data-table-container { /* Contenedor para la tabla de datos con fondo blanco, padding, bordes redondeados y sombra para dar un efecto de elevación */
+    background: var(--blanco); padding: 25px; /* Fondo blanco para la tabla de datos con padding para separar el contenido del borde */
+    border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Bordes redondeados y sombra para dar un efecto de elevación a la tabla de datos */
 }
 
-table { /* Estilos para la tabla dentro del contenedor de la tabla, que muestra datos de manera organizada y legible. El diseño es limpio y moderno, con un fondo blanco para diferenciarlo del fondo gris del área de contenido principal, un padding generoso para mejorar la legibilidad y un borde redondeado para darle un aspecto más amigable. */
-    width: 100%; /* La tabla ocupa el 100% del ancho del contenedor, asegurando que se ajuste al espacio disponible y proporcione una presentación clara de los datos. */
-    border-collapse: collapse; /* Elimina el espacio entre las celdas de la tabla para que las líneas de borde se vean más limpias y profesionales, mejorando la apariencia visual de la tabla. */
-    margin-top: 15px; /* Espacio entre el encabezado de la sección de la tabla y la tabla misma para mejorar la legibilidad y la apariencia visual, asegurando que la tabla esté claramente separada del encabezado pero aún así relacionada visualmente. */
+table { width: 100%; border-collapse: collapse; margin-top: 15px; } /* Estilo para la tabla con ancho completo, colapsar bordes y margen superior para separar del encabezado de la tabla */
+th { text-align: left; padding: 12px; border-bottom: 2px solid #eee; background: #fafafa; color: #555; } /* Estilo para los encabezados de la tabla con alineación a la izquierda, padding, borde inferior, fondo claro y color de texto gris para diferenciarlo del resto de la tabla */
+td { padding: 15px 12px; border-bottom: 1px solid #eee; } /* Estilo para las celdas de la tabla con padding y borde inferior para separar las filas de la tabla */
+
+/* Botón Asistencia */
+.btn-check { /* Estilo para el botón de marcar asistencia con fondo transparente, borde verde y texto verde para indicar una acción positiva */
+    background: transparent; border: 1px solid var(--verde-ok); /* Borde verde para resaltar el botón de marcar asistencia */
+    color: var(--verde-ok); padding: 6px 18px; /* Espaciado interno para el botón de marcar asistencia */
+    border-radius: 20px; cursor: pointer; font-weight: bold; /* Fuente en negrita para el botón de marcar asistencia */
+    transition: 0.3s; /* Transición suave para el efecto hover en el botón de marcar asistencia */
 }
 
-th {
-    text-align: left; /* Alinea el texto de los encabezados de la tabla a la izquierda para mejorar la legibilidad y crear un diseño más limpio y profesional. */
-    padding: 12px;  /* Espaciado interno para que el texto dentro de los encabezados de la tabla no esté pegado a los bordes, mejorando la legibilidad y el diseño visual. */
-    border-bottom: 2px solid #eee; /* Agrega una línea de borde debajo de los encabezados de la tabla para separarlos visualmente del resto de las filas, mejorando la legibilidad y el diseño visual general. */
-    color: #555; /* Color de texto gris para los encabezados de la tabla, proporcionando un contraste suave con el fondo blanco de la tabla, mejorando la legibilidad y el diseño visual general. */
-    background-color: #fafafa; /* Color de fondo claro para los encabezados de la tabla, diferenciándolos del resto de las filas y mejorando la legibilidad y el diseño visual general. */
-}
-
-td { /* Estilos para las celdas de la tabla, que muestran los datos de manera organizada y legible. El diseño es limpio y moderno, con un fondo blanco para diferenciarlo del fondo gris del área de contenido principal, un padding generoso para mejorar la legibilidad y un borde redondeado para darle un aspecto más amigable. */
-    padding: 15px 12px; /* Espaciado interno para que el texto dentro de las celdas de la tabla no esté pegado a los bordes, mejorando la legibilidad y el diseño visual. */
-    border-bottom: 1px solid #eee; /* Agrega una línea de borde debajo de las celdas de la tabla para separarlas visualmente, mejorando la legibilidad y el diseño visual general. */
-}
-
-.badge { /* Estilos para las etiquetas de estado dentro de la tabla, que proporcionan información visual sobre el estado de los datos. El diseño es simple y claro, con un fondo de color para diferenciar los estados y un color de texto que contraste para mejorar la legibilidad. */
-    padding: 4px 10px; /* Espaciado interno para que el texto dentro de las etiquetas de estado no esté pegado a los bordes, mejorando la legibilidad y el diseño visual. */
-    border-radius: 20px;    /* Bordes redondeados para darle un aspecto más moderno y amigable a las etiquetas de estado, haciéndolas más atractivas visualmente. */
-    font-size: 0.75rem; /* Tamaño de fuente para las etiquetas de estado, asegurando que sean lo suficientemente pequeñas para no competir visualmente con el resto del contenido de la tabla pero aún así legibles, manteniendo la jerarquía visual en la tabla. */
-    font-weight: bold;  /* Hace que el texto dentro de las etiquetas de estado sea más destacado y fácil de leer, mejorando la apariencia visual y la comunicación de la información dentro de la tabla. */
-}
-
-.badge-success { background: #e8f5e9; color: #2e7d32; } /* Estilos para las etiquetas de estado de éxito dentro de la tabla, que indican que el estado es positivo o satisfactorio. El diseño utiliza un fondo verde claro para diferenciarlo visualmente y un color de texto verde oscuro para proporcionar un buen contraste, mejorando la legibilidad y el diseño visual general. */
-.badge-warning { background: #fff3e0; color: #ef6c00; } /* Estilos para las etiquetas de estado de advertencia dentro de la tabla, que indican que el estado es precario o requiere atención. El diseño utiliza un fondo naranja claro para diferenciarlo visualmente y un color de texto naranja oscuro para proporcionar un buen contraste, mejorando la legibilidad y el diseño visual general. */
-
-.btn-edit { /* Estilos para el botón de edición dentro de la tabla, que permite a los usuarios interactuar con los datos. El diseño es simple y claro, con un fondo transparente para que el botón se integre bien con el diseño de la tabla, un borde para hacerlo destacar y un color de texto que contraste para mejorar la legibilidad. */
-    background: transparent;    /* Fondo transparente para que el botón de edición se integre bien con el diseño de la tabla, permitiendo que el diseño general de la tabla se mantenga limpio y profesional, mientras que el botón sigue siendo claramente visible y accesible para los usuarios. */
-    border: 1px solid var(--rojo-principal); /* Agrega un borde con el color rojo principal para hacer que el botón de edición destaque dentro de la tabla, proporcionando un punto focal visual que facilita a los usuarios encontrar la opción de edición. */
-    color: var(--rojo-principal);   /* Color de texto rojo para el botón de edición, manteniendo la coherencia con la paleta de colores del dashboard y asegurando que el botón sea claramente visible y destaque como una opción interactiva dentro de la tabla, mejorando la apariencia visual y la comunicación de la funcionalidad del botón. */
-    padding: 5px 12px; /* Espaciado interno para hacer que el botón de edición sea más grande y fácil de clicar, mejorando la experiencia del usuario. */
-    border-radius: 4px; /* Bordes redondeados para darle un aspecto más moderno y amigable al botón de edición, haciéndolo más atractivo visualmente. */
-    cursor: pointer; /* Cambia el cursor a un puntero al pasar sobre el botón de edición, indicando que es interactivo y mejorando la experiencia del usuario al proporcionar una retroalimentación visual clara. */
-    transition: 0.3s; /* Agrega una transición suave para los efectos de hover, haciendo que el botón de edición se sienta más interactivo y atractivo al usuario, mejorando la experiencia del usuario al proporcionar una retroalimentación visual clara. */
-}
-
-.btn-edit:hover { /* Estilos para el estado hover del botón de edición dentro de la tabla, que proporciona retroalimentación visual cuando los usuarios pasan el cursor sobre el botón. El diseño cambia el fondo y el color del texto para crear un efecto de contraste que hace que el botón sea más atractivo visualmente y claramente interactivo, mejorando la experiencia del usuario. */
-    background: var(--rojo-principal); /* Cambia el fondo al color rojo principal al pasar el cursor, creando un efecto de contraste que hace que el botón de edición sea más atractivo visualmente y claramente interactivo, mejorando la experiencia del usuario. */
-    color: white; /* Cambia el color del texto a blanco al pasar el cursor, manteniendo la coherencia con la paleta de colores del dashboard y asegurando que el botón de edición siga siendo legible y atractivo visualmente durante la interacción del usuario. */
+.btn-check:hover { /* Efecto hover para el botón de marcar asistencia con fondo verde y texto blanco para indicar que el botón es interactivo */
+    background: var(--verde-ok); /* Fondo verde para resaltar el botón de marcar asistencia al pasar el mouse */
+    color: white; /* Texto blanco para resaltar el botón de marcar asistencia al pasar el mouse */
 }
