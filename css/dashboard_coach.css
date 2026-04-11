@@ -118,3 +118,15 @@ td { padding: 15px 12px; border-bottom: 1px solid #eee; } /* Estilo para las cel
     background: var(--verde-ok); /* Fondo verde para resaltar el botón de marcar asistencia al pasar el mouse */
     color: white; /* Texto blanco para resaltar el botón de marcar asistencia al pasar el mouse */
 }
+
+/* Ajuste para el logo en el panel del Coach */
+.nav-left { /* Contenedor para el logo en el header del dashboard del coach con diseño de flexbox para alinear el logo con el texto del nombre del coach */
+    display: flex; /* Flexbox para alinear el logo con el texto del nombre del coach */
+    align-items: center; /* Alinear verticalmente el logo con el texto del nombre del coach */
+}
+
+.nav-left img { /* Estilo para el logo en el header del dashboard del coach con un tamaño ajustado para que se vea bien junto al texto del nombre del coach */
+    height: 35px; /* Ajusta el tamaño aquí si lo ves muy grande o pequeño */
+    width: auto; /* Mantiene la proporción del logo */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); /* Opcional: le da un toque de profundidad al logo para que destaque más en el header del dashboard del coach */
+}

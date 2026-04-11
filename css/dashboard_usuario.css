@@ -40,3 +40,15 @@ td { padding: 15px 12px; border-bottom: 1px solid #f5f5f5; } /* Estilo para las 
     border-radius: 8px; font-weight: bold; cursor: pointer; transition: all 0.2s; /* Transición para el efecto hover en los botones de reservar y cerrar sesión con cambio de fondo para indicar que el botón es interactivo */
 }
 .btn-reservar:hover, .btn-logout:hover { background-color: #1565C0; } /* Efecto hover para los botones de reservar y cerrar sesión con cambio de fondo a un azul más oscuro para indicar que el botón es interactivo */
+
+/* --- ESTILOS PARA EL LOGO DEL USUARIO --- */
+.logo { /* Contenedor para el logo del usuario con diseño de flexbox para organizar el logo y el texto, alineación vertical centrada y espacio entre el logo y el texto */
+    display: flex; /* Diseño de flexbox para organizar el logo y el texto en una fila */
+    align-items: center; /* Alineación vertical centrada para el logo y el texto */
+}
+
+.logo img {
+    height: 35px; /* Ajusta este valor si quieres que el logo sea más grande */
+    width: auto; /* Mantiene la proporción del logo */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); /* Sombra suave para que resalte */
+}

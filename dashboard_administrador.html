@@ -1,0 +1,95 @@
+<!DOCTYPE html> <!-- Archivo: dashboard_administrador.html -->
+<html lang="es"> <!-- Página de Dashboard para Administradores de SportClub -->
+<head> <!-- Metadatos y enlace a CSS para el Dashboard del Administrador -->
+    <meta charset="UTF-8"> <!-- Codificación de caracteres para soporte en español -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración para diseño responsivo -->
+    <title>SportClub - Admin Central</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="css/dashboard_administrador.css"> <!-- Enlace al archivo CSS específico para el diseño del dashboard del administrador -->
+</head> <!-- Cuerpo del documento que contiene la estructura principal del dashboard del administrador -->
+<body> <!-- Contenedor principal del dashboard del administrador -->
+    <header class="top-header"> <!-- Encabezado superior con el logo y opciones de navegación para el administrador -->
+        <div class="brand"> <!-- Sección de la marca con el logo y el nombre del sistema para el administrador -->
+            <img src="image/logo_empresa_letra_v1.png" alt="Logo" style="height: 30px; vertical-align: middle; margin-right: 10px;"> <!-- Logo de la empresa con estilo para alineación y espacio -->
+            SportClub <strong>Admin</strong> <!-- Nombre del sistema con énfasis en "Admin" para destacar el rol del usuario -->
+        </div> <!-- Sección de navegación con enlaces para el perfil y cierre de sesión del administrador -->
+        <div class="header-nav"> <!-- Contenedor para los enlaces de navegación en el encabezado -->
+            <a href="#" class="nav-link">Mi Perfil</a> <!-- Enlace para acceder al perfil del administrador -->
+            <a href="login.html" class="nav-link logout">Cerrar Sesión</a> <!-- Enlace para cerrar sesión que redirige a la página de login -->
+        </div> <!-- Fin del encabezado superior del dashboard del administrador -->
+    </header> <!-- Contenedor principal que incluye la barra lateral y el contenido principal del dashboard del administrador -->
+
+    <div class="dashboard-container"> <!-- Contenedor para la barra lateral y el contenido principal del dashboard del administrador -->
+    <aside class="sidebar"> <!-- Barra lateral con opciones de navegación para el administrador -->
+            <nav> <!-- Navegación principal de la barra lateral con enlaces a diferentes secciones del dashboard del administrador -->
+                <ul> <!-- Lista de enlaces de navegación en la barra lateral para el administrador -->
+                    <li><a href="#"><span class="icon">🏠</span> Gestión Usuarios</a></li> <!-- Enlace para gestionar usuarios con un ícono de casa para representar la sección principal -->
+                    <li><a href="#"><span class="icon">📊</span> Reportes</a></li> <!-- Enlace para acceder a los reportes con un ícono de gráfico para representar análisis y estadísticas -->
+                    <li><a href="#"><span class="icon">🏢</span> Sedes</a></li> <!-- Enlace para gestionar sedes con un ícono de edificio para representar las instalaciones deportivas -->
+                    <li><a href="#"><span class="icon">⚙️</span> Ajustes</a></li> <!-- Enlace para acceder a los ajustes del sistema con un ícono de engranaje para representar la configuración -->
+                </ul> <!-- Fin de la lista de enlaces de navegación en la barra lateral para el administrador -->
+            </nav> <!-- Fin de la barra lateral del dashboard del administrador -->
+        </aside> <!-- Contenedor para el contenido principal del dashboard del administrador -->
+
+        <main class="main-content"> <!-- Contenedor principal para mostrar la información y funcionalidades del dashboard del administrador -->
+            <section class="welcome"> <!-- Sección de bienvenida con un mensaje de saludo para el administrador -->
+                <h1>¡Hola, Administrador!</h1> <!-- Título de bienvenida para el administrador -->
+                <p>Bienvenido al panel de control central de SportClub.</p> <!-- Mensaje de bienvenida que invita al administrador a explorar las funcionalidades del dashboard -->
+            </section> <!-- Sección de estadísticas rápidas con tarjetas para mostrar información clave del sistema al administrador -->
+
+            <div class="stats-grid"> <!-- Contenedor para las tarjetas de estadísticas rápidas del dashboard del administrador -->
+                <div class="card"> <!-- Tarjeta para mostrar el número de usuarios activos en el sistema -->
+                    <h3>USUARIOS ACTIVOS</h3> <!-- Título de la tarjeta que indica que se muestra el número de usuarios activos -->
+                    <p class="value">842</p> <!-- Valor numérico que representa la cantidad de usuarios activos en el sistema -->
+                </div> <!-- Tarjeta para mostrar el número de clases programadas para el día -->
+                <div class="card"> <!-- Tarjeta para mostrar el número de clases programadas para el día -->
+                    <h3>CLASES DEL DÍA</h3> <!-- Título de la tarjeta que indica que se muestra el número de clases programadas para el día -->
+                    <p class="value">24</p> <!-- Valor numérico que representa la cantidad de clases programadas para el día -->
+                </div> <!-- Tarjeta para mostrar el número total de registros en el sistema -->
+                <div class="card"> <!-- Tarjeta para mostrar el número total de registros en el sistema -->
+                    <h3>TOTAL REGISTROS</h3> <!-- Título de la tarjeta que indica que se muestra el número total de registros en el sistema -->
+                    <p class="value">1,254 📈</p> <!-- Valor numérico que representa la cantidad total de registros en el sistema, con un ícono de gráfico para indicar crecimiento -->
+                </div> <!-- Tarjeta para mostrar el número de sedes activas en el sistema -->
+            </div> <!-- Fin de la sección de estadísticas rápidas con tarjetas para el dashboard del administrador -->
+
+            <section class="table-section"> <!-- Sección para mostrar la tabla de gestión de usuarios recientes -->
+                <h2>👥 Gestión de Usuarios Recientes</h2> <!-- Título de la sección que indica que se muestra la gestión de usuarios recientes, con un ícono de personas para representar la sección -->
+                <table class="data-table"> <!-- Tabla para mostrar la información de los usuarios recientes en el sistema -->
+                    <thead> <!-- Encabezado de la tabla con los títulos de las columnas para la gestión de usuarios recientes -->
+                        <tr> <!-- Fila del encabezado de la tabla con los títulos de las columnas para la gestión de usuarios recientes -->
+                            <th>Nombre</th> <!-- Columna para mostrar el nombre de los usuarios recientes en el sistema -->
+                            <th>Correo</th> <!-- Columna para mostrar el correo electrónico de los usuarios recientes en el sistema -->
+                            <th>Rol</th> <!-- Columna para mostrar el rol de los usuarios recientes en el sistema (Admin, Coach, Usuario) -->
+                            <th>Acción</th> <!-- Columna para mostrar las acciones disponibles para gestionar a los usuarios recientes en el sistema (por ejemplo, un botón para gestionar cada usuario) -->
+                        </tr> <!-- Fin de la fila del encabezado de la tabla para la gestión de usuarios recientes -->
+                    </thead> <!-- Fin del encabezado de la tabla para la gestión de usuarios recientes -->
+                    <tbody> <!-- Cuerpo de la tabla para mostrar las filas con la información de los usuarios recientes en el sistema -->
+                        <tr> <!-- Fila de la tabla para mostrar la información de un usuario reciente en el sistema -->
+                            <td><strong>Leon Alvarez</strong></td> <!-- Columna para mostrar el nombre del usuario reciente, con formato en negrita para resaltar el nombre -->
+                            <td>leon@mail.com</td> <!-- Columna para mostrar el correo electrónico del usuario reciente -->
+                            <td><span class="badge admin">Admin</span></td> <!-- Columna para mostrar el rol del usuario reciente, con un estilo de badge para resaltar el rol de Admin -->
+                            <td><button class="btn-action">Gestionar</button></td> <!-- Columna para mostrar un botón de acción para gestionar al usuario reciente, con un estilo de botón para resaltar la acción disponible -->
+                        </tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
+                        <tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
+                            <td><strong>Klara Espinosa</strong></td> <!-- Columna para mostrar el nombre del usuario reciente, con formato en negrita para resaltar el nombre -->
+                            <td>klara@mail.com</td> <!-- Columna para mostrar el correo electrónico del usuario reciente -->
+                            <td><span class="badge coach">Coach</span></td> <!-- Columna para mostrar el rol del usuario reciente, con un estilo de badge para resaltar el rol de Coach -->
+                            <td><button class="btn-action">Gestionar</button></td> <!-- Columna para mostrar un botón de acción para gestionar al usuario reciente, con un estilo de botón para resaltar la acción disponible -->
+                        </tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
+                        <tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
+                            <td><strong>Matias Perez</strong></td> <!-- Columna para mostrar el nombre del usuario reciente, con formato en negrita para resaltar el nombre -->
+                            <td>mati@mail.com</td> <!-- Columna para mostrar el correo electrónico del usuario reciente -->
+                            <td><span class="badge user">Usuario</span></td> <!-- Columna para mostrar el rol del usuario reciente, con un estilo de badge para resaltar el rol de Usuario -->
+                            <td><button class="btn-action">Gestionar</button></td> <!-- Columna para mostrar un botón de acción para gestionar al usuario reciente, con un estilo de botón para resaltar la acción disponible -->
+                        </tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
+                        <tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
+                            <td><strong>Javiera Ruiz</strong></td> <!-- Columna para mostrar el nombre del usuario reciente, con formato en negrita para resaltar el nombre -->
+                            <td>javi.r@mail.com</td> <!-- Columna para mostrar el correo electrónico del usuario reciente -->
+                            <td><span class="badge user">Usuario</span></td> <!-- Columna para mostrar el rol del usuario reciente, con un estilo de badge para resaltar el rol de Usuario -->
+                            <td><button class="btn-action">Gestionar</button></td> <!-- Columna para mostrar un botón de acción para gestionar al usuario reciente, con un estilo de botón para resaltar la acción disponible -->
+                        </tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
+                        <tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
+                            <td><strong>Andres Soto</strong></td> <!-- Columna para mostrar el nombre del usuario reciente, con formato en negrita para resaltar el nombre -->
+                            <td>a.soto@mail.com</td> <!-- Columna para mostrar el correo electrónico del usuario reciente -->
+                            <td><span class="badge user">Usuario</span></td> <!-- Columna para mostrar el rol del usuario reciente, con un estilo de badge para resaltar el rol de Usuario -->
+                            <td><button class="btn-action">Gestionar</button></td> <!-- Columna para mostrar un botón de acción para gestionar al usuario reciente, con un estilo de botón para resaltar la acción disponible -->
+                        </tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
