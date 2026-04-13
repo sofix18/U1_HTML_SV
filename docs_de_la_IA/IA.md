@@ -230,12 +230,3 @@ Durante el desarrollo, surgieron inconsistencias que requirieron intervención m
 
    (Igual deje las otras evidencias del dashboard adminitrador el la carpeta docss_de_la_IA).
 
-   Detalles finales:
-
-   Renombrar el index.html a landingpage.html y Cambiar el nombre del archivo principal en la carpeta.
-   
-   Actualizar la Salida del	dashboard_administrador.html y Cambiar el enlace de "Cerrar Sesión" a landingpage.html.
-
-   Actualizar la Salida	del dashboard_usuario.html	y cambiar el botón de "Cerrar Sesión" por (vía enlace) a landingpage.html.
-
-   Lo ultimo que ise fue en el boton del login.html al apretar se redijiera al landingpage.html.
