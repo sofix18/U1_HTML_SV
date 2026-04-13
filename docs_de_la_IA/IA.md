@@ -38,7 +38,7 @@ Feedback Visual: Añadí `transition: 0.3s` y efectos `:hover` en botones y enla
 
 4. Resultados y Evidencia Visual:
 
-Presento el proceso de validación con las rutas actualizadas a la carpeta `./docs/`:
+Presento el proceso de validación con las rutas actualizadas a la carpeta `./docs_de_la_IA/`:
 
 Paso 1: Corrección de rutas y visualización inicial
 Se corrigió la etiqueta `<img>` para que el logo sea visible vinculándolo a la carpeta `image/`.
@@ -169,3 +169,73 @@ Se estableció un sistema de diseño basado en roles:
 Coach: Sidebar Rojo (#C62828) 
 Usuario: Sidebar Azul (#1976D2) 
 
+Dashboard Administrador 11/04/2026
+
+Para este módulo, la IA asistió en la creación de una interfaz de control centralizada con las siguientes implementaciones:
+
+Estructura de Contenedores (`brand`): Se definió la clase `.brand` dentro del header para contenerr la identidad visual. La IA sugirió el uso de etiquetas `<strong>` para resaltar el rol "Admin" y asi diferenciarlo visualmente de los otros paneles.
+
+Gestión de Datos (Tabla de Usuarios): La IA generó la estructura de la tabla de "Gestión de Usuarios Recientes", incluyendo el uso de badges (etiquetas de color) para identificar rápidamente los roles:
+ `admin´: Color distintivo para administradores.
+ ´coach`: Color para entrenadores.
+ ´user`: Color para  usuarios finales.
+
+Layout de Estadísticas (`stats-grid`): Se utilizó un sistema (Grid/Flexbox) para mostrar los indicadores clave (Usuarios Activos, Clases, Registros), asegurando que las tarjetas fueran proporcionales y legibles.
+
+Depuración de Estilos: Se corrigieron problemas de "herencia de estilos" donde los enlaces del header (`nav-link`) interferían con el diseño del nombre del club.
+
+---
+
+Control de Errores y Ajustes Manuales
+
+Durante el desarrollo, surgieron inconsistencias que requirieron intervención manual:
+
+1. Error de Duplicación de Títulos (Coach):
+
+   Problema: Al intentar insertar el logo en el panel del Entrenador, el título "SportClub Coach" aparecía duplicado en el header (uno centrado y otro a la izquierda).
+   
+   Causa: Confusión entre las clases `.brand` y `.nav-left`. El código original tenía dos etiquetas con el mismo texto en diferentes contenedores.
+
+   Arreglo Realizado: Se eliminó manualmente el bloque de texto sobrante y se unificó la identidad visual dentro del contenedor `nav-left`, aplicando `display: flex` para alinear el logo correctamente.
+
+2. Inconsistencia de Clases entre Dashboards:
+
+   Problema: Los tres paneles usaban nombres de clases distintos para el logo (`.brand`, `.logo`, `.nav-left`), lo que impedía usar un solo código CSS.
+
+   Arreglo Realizado: Se optó por mantener la independencia de clases para evitar conflictos de estilos, pero se estandarizaron las medidas de las imágenes (35px de alto) para mantener la armonía visual del proyecto.
+
+   Visualisaciones del dashboaradmin
+
+1. Error de Carga de Estilos (CSS):
+   
+   Problema: En las primeras pruebas, el HTML se visualizaba sin formato (texto plano y listas sin estilo).
+  
+   Evidencia:![Primera prueba sin estilos](prueba3.png)
+
+   Arreglo Realizado: Se verificó la ruta del archivo `.css` y se corrigió el enlace en el `<head>` para que el navegador interpretara correctamente las clases de Flexbox.
+
+2. Ajuste de Colores y Layout:
+
+   Problema: Los colores iniciales eran demasiado básicos y las tarjetas de estadísticas no tenían sombras ni bordes redondeados.
+   
+   Evidencia:![Ajuste de colores inicial](Prueba1.png)
+   
+   Arreglo Realizado: Se aplicaron propiedades de `box-shadow` y `border-radius` para mejorar la profundidad visual, logrando una interfaz más moderna.
+
+3. Resultado Final:
+
+   Logro: Tras varias iteraciones de limpieza de código y ajuste de márgenes, se logró el dashboard final con el logo correctamente integrado y la tabla de usuarios legible.
+   
+   Evidencia: ![Dashboard Final](pruebafinal.png)
+
+   (Igual deje las otras evidencias del dashboard adminitrador el la carpeta docss_de_la_IA).
+
+   Detalles finales:
+
+   Renombrar el index.html a landingpage.html y Cambiar el nombre del archivo principal en la carpeta.
+   
+   Actualizar la Salida del	dashboard_administrador.html y Cambiar el enlace de "Cerrar Sesión" a landingpage.html.
+
+   Actualizar la Salida	del dashboard_usuario.html	y cambiar el botón de "Cerrar Sesión" por (vía enlace) a landingpage.html.
+
+   Lo ultimo que ise fue en el boton del login.html al apretar se redijiera al landingpage.html.
