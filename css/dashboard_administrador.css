@@ -127,38 +127,76 @@ body { background-color: #f0f2f5; color: #333; } /* Fondo claro y texto oscuro p
     align-items: center; /* Centra verticalmente el logo con el texto */
 }
 
-
-/* --- ESTO ARREGLA EL CORTE EN CELULARES --- */
-@media (max-width: 768px) {
-    /* 1. Obliga a que el diseño sea una sola columna hacia abajo */
-    .main-wrapper {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        overflow-x: hidden; /* Evita que la pantalla baile hacia los lados */
-    }
-
-    /* 2. La barra lateral deja de ser fija a la izquierda */
-    .sidebar {
-        width: 100% !important;
+/* --- SOLO PARA CELULARES (ADMIN) --- */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Navbar: Evitamos que el logo y botones choquen */
+    .dash-nav {
+        flex-direction: column !important;
         height: auto !important;
-        position: relative;
-        padding: 10px 0;
+        padding: 10px !important;
     }
 
-    /* 3. El menú se estira a lo ancho para que no se corte el texto */
-    .menu-list {
+    .nav-right {
+        margin-top: 10px;
         display: flex;
-        flex-direction: row; /* Los botones se ponen uno al lado del otro */
-        flex-wrap: wrap;    /* Si no caben, bajan a la siguiente línea */
-        justify-content: center;
         gap: 10px;
     }
 
-    /* 4. El contenido principal ahora usa todo el ancho disponible */
-    .content {
+    /* 2. Contenedor: Pasamos de horizontal a vertical */
+    .main-wrapper, .container-dash {
+        flex-direction: column !important;
+    }
+
+    /* 3. Sidebar: Se convierte en un menú superior horizontal */
+    .sidebar {
         width: 100% !important;
-        padding: 15px;
-        box-sizing: border-box;
+        height: auto !important;
+        min-height: auto !important;
+        position: relative !important;
+        padding: 5px 0 !important;
+        background-color: #9b6dff !important; /* Mantenemos tu color morado */
+    }
+
+    .sidebar ul {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important; /* Scroll lateral para los botones */
+        white-space: nowrap !important;
+        padding: 10px !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sidebar ul li {
+        margin: 0 10px !important;
+        display: inline-block !important;
+    }
+
+    .sidebar ul li a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 11px !important;
+        text-align: center;
+    }
+
+    /* 4. Contenido: Ahora usa todo el ancho disponible */
+    .main-content, .content {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 15px !important;
+    }
+
+    /* 5. Tablas y Tarjetas: Evitamos que se estiren al infinito */
+    .cards-container {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+
+    /* La tabla ahora se podrá deslizar con el dedo */
+    .table-section {
+        overflow-x: auto !important;
+        display: block !important;
     }
 }
