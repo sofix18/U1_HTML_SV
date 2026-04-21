@@ -1,43 +1,45 @@
-<!DOCTYPE html> <!-- Esto es lo que hace que el navegador sepa que este documento es un archivo HTML5 moderno -->
-<html lang="es"> <!-- Define que el contenido de la web está en español -->
-<head> <!-- Aca es el contenedor de los metadatos (información que no ve el usuario directamente). -->
-    <meta charset="UTF-8"> <!-- Esto asegura que se vean bien las tildes y la letra "ñ". -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Este es el código HTML para la página de inicio de sesión de SportClub. La estructura incluye un contenedor principal que centra una tarjeta con el formulario de inicio de sesión, que contiene campos para el correo electrónico y la contraseña, así como un botón para enviar el formulario. También hay enlaces para recuperar la contraseña y registrarse, que apuntan a las páginas correspondientes. -->
-    <title>Login - SportClub</title> <!-- El título que aparece en la pestaña del navegador. -->
-    <link rel="stylesheet" href="css/style.css"> <!-- Enlace a la hoja de estilos CSS que contiene las reglas de diseño para esta página. El archivo "style.css" debe estar ubicado en una carpeta llamada "css". -->
-</head> <!-- Este es el código HTML para la página de inicio de sesión de SportClub. La estructura incluye un contenedor principal que centra una tarjeta con el formulario de inicio de sesión, que contiene campos para el correo electrónico y la contraseña, así como un botón para enviar el formulario. También hay enlaces para recuperar la contraseña y registrarse, que apuntan a las páginas correspondientes. -->
-<body> <!-- Este es el código HTML para la página de inicio de sesión de SportClub. La estructura incluye un contenedor principal que centra una tarjeta con el formulario de inicio de sesión, que contiene campos para el correo electrónico y la contraseña, así como un botón para enviar el formulario. También hay enlaces para recuperar la contraseña y registrarse, que apuntan a las páginas correspondientes. -->
-    <main class="container"> <!-- El contenedor principal de la página, que tiene una clase "container" para aplicar estilos específicos. Dentro de este contenedor, hay una sección con la clase "card" que probablemente se utiliza para darle un estilo de tarjeta al formulario de inicio de sesión. -->
-        <section class="card"> <!-- El contenedor principal de la página, que tiene una clase "container" para aplicar estilos específicos. Dentro de este contenedor, hay una sección con la clase "card" que probablemente se utiliza para darle un estilo de tarjeta al formulario de inicio de sesión. -->
-            <div class="back-container"> <!-- Un contenedor para el enlace de "volver", que se muestra en la parte superior de la tarjeta. -->
-            <a href="index.html" class="btn-back">← Volver</a> 
-            </div> <!-- Un contenedor para el enlace de "volver", que se muestra en la parte superior de la tarjeta. -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SportClub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="card">
+            <div class="back-container">
+                <a href="index.html" class="btn-back">← Volver</a>
+            </div>
 
-            <img src="image/logo_empresa_letra_v1.png" alt="SportClub Logo" class="logo"> <!-- Una imagen que muestra el logo de la empresa. El atributo "src" especifica la ruta de la imagen, el atributo "alt" proporciona un texto alternativo para la imagen (que se muestra si la imagen no se carga), y la clase "logo" se utiliza para aplicar estilos específicos a esta imagen. -->
-            <h2>Iniciar sesión</h2> <!-- El título principal de la página, que indica que es la sección de inicio de sesión. -->
+            <img src="image/logo_empresa_letra_v1.png" alt="SportClub Logo" class="logo">
+            <h2>Iniciar sesión</h2>
 
-            <form action="#"> <!-- El formulario de inicio de sesión, que se enviará a la URL especificada en el atributo "action" (en este caso, no se especifica una URL, lo que significa que el formulario no se enviará a ningún lado). -->
-                <div class="input-group"> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el inicio de sesión. -->
-                    <label for="email">Email</label> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el inicio de sesión. -->
-                    <input type="email" id="email" placeholder="Ingresa tu correo" required> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el inicio de sesión. -->
-                </div> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el inicio de sesión. -->
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Ingresa tu correo" required>
+                </div>
 
-                <div class="input-group"> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el inicio de sesión. -->
-                    <label for="password">Contraseña</label> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el inicio de sesión. -->
-                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el inicio de sesión. -->
-                </div> <!-- Campos de correo electrónico y contraseña, que son obligatorios para el inicio de sesión. -->
+                <div class="input-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+                </div>
 
-                <button type="submit" class="btn-login">Ingresar</button> <!-- El botón de envío del formulario, que tiene un estilo específico definido por la clase "btn-login". Al hacer clic en este botón, el formulario se enviará a la URL especificada en el atributo "action" del formulario (en este caso, no se especifica una URL, lo que significa que el formulario no se enviará a ningún lado). -->
-            </form> <!-- Cierre del formulario de inicio de sesión -->
+                <p id="error-message" style="color: red; display: none; text-align: center; margin-bottom: 10px; font-weight: bold;"></p>
+                
+                <button type="submit" class="btn-login">Ingresar</button>
+            </form>
 
-            <div class="footer-links"> <!-- Un contenedor para los enlaces de "¿Olvidaste tu contraseña?" y "Registrarse", que se muestra debajo del formulario de inicio de sesión. -->
-                <a href="recover.html">¿Olvidaste tu contraseña?</a> <!-- Un enlace que lleva a la página de recuperación de contraseña, permitiendo a los usuarios restablecer su contraseña
-                 si la han olvidado. El enlace apunta a "recover.html", que es la página de recuperación de contraseña. -->
-                <span>|</span> <!-- Un separador visual entre los dos enlaces, que se muestra como una barra vertical. -->
-                <a href="register.html">Registrarse</a> <!-- Un enlace que lleva a la página de registro, permitiendo a los usuarios crear una cuenta si aún no tienen una. El enlace apunta a "register.html", que es la página de registro. -->
-            </div> <!-- Un contenedor para los enlaces de "¿Olvidaste tu contraseña?" y "Registrarse", que se muestra debajo del formulario de inicio de sesión. -->
-        </section> </main>  </body> <!-- Cierre del cuerpo del documento -->
-</html> <!-- Este es el código HTML para la página de inicio de sesión de SportClub. La estructura incluye un contenedor principal 
-que centra una tarjeta con el formulario de inicio de sesión, que contiene campos para el correo electrónico y la contraseña,
- así como un botón para enviar el formulario. También hay enlaces para recuperar la contraseña y registrarse, que apuntan a las páginas correspondientes. -->
- 
+            <div class="footer-links">
+                <a href="recover.html">¿Olvidaste tu contraseña?</a>
+                <span>|</span>
+                <a href="register.html">Registrarse</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

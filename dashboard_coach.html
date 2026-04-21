@@ -16,7 +16,7 @@
 
     <div class="nav-right"> <!-- Contenedor para los enlaces de navegación en la barra de navegación superior -->
         <a href="#" class="btn-perfil">Editar Perfil</a>    <!-- Enlace para editar el perfil del entrenador, con una clase específica para estilos -->
-        <a href=<a href="index.html" class="btn-logout" style="text-decoration: none; display: inline-block;">Cerrar Sesión</a>
+        <a href="index.html" id="btnLogout" class="btn-logout" style="text-decoration: none; display: inline-block;">Cerrar Sesión</a>
     </div> <!-- Contenedor para los enlaces de navegación en la barra de navegación superior -->
 </nav> <!-- Fin de la barra de navegación superior para el dashboard del entrenador -->
 
@@ -34,7 +34,7 @@
         <main class="content"> <!-- Contenedor para el contenido principal del dashboard -->
             <header class="content-header"> <!-- Encabezado del contenido principal del dashboard -->
                 <h1>Panel del Entrenador</h1> <!-- Título del panel del entrenador -->
-                <p>Hoy es <strong>Lunes 13 de Abril</strong>, Bienvenido Claudio.</p> <!-- Mensaje de bienvenida personalizado para el entrenador, mostrando la fecha actual -->
+                <p>Hoy es <strong>Lunes 13 de Abril</strong>, Bienvenido <span id="userNameDisplay">Claudio.</span>.</p>
             </header> <!-- Sección para mostrar las clases programadas para el día y la lista de alumnos inscritos en la próxima clase -->
             
             <section class="class-selector"> <!-- Sección para mostrar las clases programadas para el día y la lista de alumnos inscritos en la próxima clase -->
@@ -96,8 +96,9 @@
                     </tbody> <!-- Fin del cuerpo de la tabla con los alumnos inscritos en la próxima clase seleccionada -->
                 </table> <!-- Fin de la tabla de alumnos inscritos en la próxima clase seleccionada -->
             </section> <!-- Fin de la sección para mostrar la tabla de alumnos inscritos en la próxima clase seleccionada -->
-        </main> <!-- Fin del contenido principal del dashboard -->
-    </div> <!-- Fin del contenedor principal del dashboard -->
+        </main>
+    </div>
 
-</body> <!-- Fin del cuerpo de la página -->
-</html> <!-- Fin del documento HTML para el dashboard de entrenador de SportClub -->
+    <script src="js/dashboards.js"></script>
+</body>
+</html>
