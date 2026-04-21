@@ -51,35 +51,35 @@
             </section> <!-- Sección para mostrar la tabla de clases disponibles para reservar -->     
 
             <div class="table-section"> <!-- Sección para mostrar la tabla de clases disponibles para reservar -->
-                <h2>🗓️ Clases Disponibles Hoy</h2> <!-- Encabezado para la sección de clases disponibles -->
-                <table> <!-- Tabla para listar las clases disponibles para reservar -->
-                    <thead> <!-- Encabezado de la tabla con los títulos de las columnas -->
-                        <tr> <!-- Fila de encabezado de la tabla -->
-                            <th>Actividad</th> <!-- Columna para el nombre de la actividad o clase -->
-                            <th>Horario</th> <!-- Columna para el horario de la clase -->
-                            <th>Entrenador</th> <!-- Columna para el nombre del entrenador que imparte la clase -->
-                            <th style="text-align:right;">Acción</th> <!-- Columna para las acciones disponibles -->
-                        </tr> <!-- Fin de la fila de encabezado de la tabla -->
-                    </thead> <!-- Cuerpo de la tabla con las clases disponibles para reservar -->
-                    <tbody> <!-- Cuerpo de la tabla con las clases disponibles para reservar -->
-                        <tr> <!-- Fila para la clase de Spinning -->
-                            <td><strong>Boxeo</strong></td> <!-- Columna para el nombre de la clase de Boxeo -->
-                            <td>10:00 - 11:30 hrs</td> <!-- Columna para el horario de la clase de Boxeo -->
-                            <td>Claudio</td> <!-- Columna para el nombre del entrenador que imparte la clase de Boxeo -->
-                            <td style="text-align:right;"><button class="btn-reservar">Reservar</button></td> <!-- Columna para el botón de reservar la clase de Boxeo -->
-                        </tr> <!-- Fila para la clase de Pilates -->
-                        <tr> <!-- Fila para la clase de Pilates -->
-                            <td><strong>Pilates</strong></td> <!-- Columna para el nombre de la clase de Pilates -->
-                            <td>12:00 - 13:00 hrs</td> <!-- Columna para el horario de la clase de Pilates -->
-                            <td>Claudio</td> <!-- Columna para el nombre del entrenador que imparte la clase de Pilates -->
-                            <td style="text-align:right;"><button class="btn-reservar">Reservar</button></td> <!-- Columna para el botón de reservar la clase de Pilates -->
-                        </tr> <!-- Fila para la clase de Yoga -->
-                    </tbody> <!-- Fin del cuerpo de la tabla con las clases disponibles para reservar -->
-                </table> <!-- Fin de la tabla de clases disponibles para reservar -->
-            </div> <!-- Fin de la sección de tabla de clases disponibles para reservar -->
-       </main>
-    </div>
+               <section class="table-section"> <h2>🗓️ Clases Disponibles Hoy</h2> 
 
-    <script src="js/dashboards.js"></script>
+                <div style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+
+                    <table class="data-table"> 
+                        <thead>
+                            <tr>
+                                <th>Actividad</th>
+                                <th>Horario</th>
+                                <th>Entrenador</th>
+                                <th style="text-align:right;">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Boxeo</strong></td>
+                                <td>10:00 - 11:30 hrs</td>
+                                <td>Claudio</td>
+                                <td style="text-align:right;"><button class="btn-reservar">Reservar</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pilates</strong></td>
+                                <td>12:00 - 13:00 hrs</td>
+                                <td>Claudio</td>
+                                <td style="text-align:right;"><button class="btn-reservar">Reservar</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div> </section> </main> </div> <script src="js/dashboards.js"></script>
 </body>
 </html>

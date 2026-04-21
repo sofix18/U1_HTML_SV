@@ -1,104 +1,103 @@
-<!DOCTYPE html> <!-- dashboard_coach.html -->
-<html lang="es"> <!-- Página de Dashboard para Entrenadores de SportClub -->
-<head> <!-- Encabezado de la página -->
-    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta para hacer la página responsive en dispositivos móviles -->
-    <title>SportClub - Dashboard Coach</title> <!-- Título de la página -->
-    <link rel="stylesheet" href="css/dashboard_coach.css"> <!-- Enlace al archivo CSS para estilos específicos del dashboard de entrenador -->
-</head> <!-- Cuerpo de la página -->
-<body> <!-- Barra de navegación superior -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportClub - Dashboard Coach</title>
+    <link rel="stylesheet" href="css/dashboard_coach.css">
+</head>
+<body>
 
-    <nav class="dash-nav"> <!-- Barra de navegación superior para el dashboard del entrenador -->
-    <div class="nav-left" style="display: flex; align-items: center;">  <!-- Contenedor para el logo y el nombre de la marca en la barra de navegación superior, con estilo para alinear los elementos verticalmente -->
-        <img src="image/logo_empresa_letra_v1.png" alt="Logo" style="height: 35px; margin-right: 12px;"> <!-- Logo de la empresa con un tamaño específico y margen a la derecha para separar el logo del texto -->
-        <span class="logo-text logo-dashboard">SportClub <strong>Coach</strong></span> <!-- Nombre de la marca con un estilo específico para el dashboard del entrenador, destacando la palabra "Coach" en negrita -->
-    </div> <!-- Contenedor para el logo y el nombre de la marca en la barra de navegación superior, con estilo para alinear los elementos verticalmente -->
+    <nav class="dash-nav">
+        <div class="nav-left" style="display: flex; align-items: center;">
+            <img src="image/logo_empresa_letra_v1.png" alt="Logo" style="height: 35px; margin-right: 12px;">
+            <span class="logo-text logo-dashboard">SportClub <strong>Coach</strong></span>
+        </div>
+        <div class="nav-right">
+            <a href="#" class="btn-perfil">Editar Perfil</a>
+            <a href="index.html" id="btnLogout" class="btn-logout" style="text-decoration: none; display: inline-block;">Cerrar Sesión</a>
+        </div>
+    </nav>
 
-    <div class="nav-right"> <!-- Contenedor para los enlaces de navegación en la barra de navegación superior -->
-        <a href="#" class="btn-perfil">Editar Perfil</a>    <!-- Enlace para editar el perfil del entrenador, con una clase específica para estilos -->
-        <a href="index.html" id="btnLogout" class="btn-logout" style="text-decoration: none; display: inline-block;">Cerrar Sesión</a>
-    </div> <!-- Contenedor para los enlaces de navegación en la barra de navegación superior -->
-</nav> <!-- Fin de la barra de navegación superior para el dashboard del entrenador -->
+    <div class="container-dash">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">🏠 Panel Principal</a></li>
+                <li><a href="#">👥 Mis Alumnos</a></li>
+                <li><a href="#">📅 Horarios de Clases</a></li>
+                <li><a href="#">📈 Reportes de Avance</a></li>
+                <li><a href="#">⚙️ Configuración</a></li>
+            </ul>
+        </aside>
 
-    <div class="container-dash"> <!-- Contenedor para el contenido principal del dashboard -->
-        <aside class="sidebar"> <!-- Barra lateral de navegación para el entrenador -->
-            <ul> <!-- Lista de opciones de navegación para el entrenador -->
-                <li><a href="#">🏠 Panel Principal</a></li> <!-- Enlace al panel principal del entrenador -->
-                <li><a href="#">👥 Mis Alumnos</a></li> <!-- Enlace para ver la lista de alumnos asignados al entrenador -->
-                <li><a href="#">📅 Horarios de Clases</a></li> <!-- Enlace para gestionar los horarios de las clases que imparte el entrenador -->
-                <li><a href="#">📈 Reportes de Avance</a></li> <!-- Enlace para ver los reportes de avance de los alumnos -->
-                <li><a href="#">⚙️ Configuración</a></li> <!-- Enlace para configurar preferencias y ajustes de la cuenta del entrenador -->
-            </ul> <!-- Fin de la barra lateral de navegación para el entrenador -->
-        </aside> <!-- Contenedor para el contenido principal del dashboard -->
-
-        <main class="content"> <!-- Contenedor para el contenido principal del dashboard -->
-            <header class="content-header"> <!-- Encabezado del contenido principal del dashboard -->
-                <h1>Panel del Entrenador</h1> <!-- Título del panel del entrenador -->
-                <p>Hoy es <strong>Lunes 13 de Abril</strong>, Bienvenido <span id="userNameDisplay">Claudio.</span>.</p>
-            </header> <!-- Sección para mostrar las clases programadas para el día y la lista de alumnos inscritos en la próxima clase -->
+        <main class="content">
+            <header class="content-header">
+                <h1>Panel del Entrenador</h1>
+                <p>Hoy es <strong>Lunes 13 de Abril</strong>, Bienvenido <span id="userNameDisplay">Claudio.</span></p>
+            </header>
             
-            <section class="class-selector"> <!-- Sección para mostrar las clases programadas para el día y la lista de alumnos inscritos en la próxima clase -->
-                <div class="agenda-header"> <!-- Encabezado para la sección de clases programadas para el día -->
-                    <h3>📅 Clases programadas para hoy:</h3> <!-- Título para la sección de clases programadas para el día -->
-                </div> <!-- Contenedor para los botones de selección de clases programadas para el día -->
-                <div class="selector-grid"> <!-- Contenedor para los botones de selección de clases programadas para el día, organizado en una cuadrícula -->
-                    <button class="btn-time">08:00 - Spinning</button> <!-- Botón para seleccionar la clase de spinning programada para las 08:00 hrs -->
-                    <button class="btn-time">10:00 - Boxeo</button> <!-- Botón para seleccionar la clase de boxeo programada para las 10:00 hrs -->
-                    <button class="btn-time">12:00 - Pilates</button> <!-- Botón para seleccionar la clase de pilates programada para las 12:00 hrs -->
-                </div> <!-- Fin de la sección para mostrar las clases programadas para el día y la lista de alumnos inscritos en la próxima clase -->
-            </section> <!-- Sección para mostrar las estadísticas de la clase seleccionada y la lista de alumnos inscritos en la próxima clase -->
+            <section class="class-selector">
+                <div class="agenda-header">
+                    <h3>📅 Clases programadas para hoy:</h3>
+                </div>
+                <div class="selector-grid">
+                    <button class="btn-time">08:00 - Spinning</button>
+                    <button class="btn-time">10:00 - Boxeo</button>
+                    <button class="btn-time">12:00 - Pilates</button>
+                </div>
+            </section>
 
-            <section class="card-section"> <!-- Sección para mostrar las estadísticas de la clase seleccionada y la lista de alumnos inscritos en la próxima clase -->
-                <div class="stat-card"> <!-- Tarjeta para mostrar el número de alumnos inscritos en la clase seleccionada -->
-                    <span class="card-icon">👥</span> <!-- Icono para representar el número de alumnos inscritos en la clase seleccionada -->
-                    <div class="card-info"> <!-- Contenedor para la información de la tarjeta de número de alumnos inscritos en la clase seleccionada -->
-                        <h3>Cupos Confirmados</h3> <!-- Título para la tarjeta de número de alumnos inscritos en la clase seleccionada -->
-                        <p>35 / 50</p> <!-- Información que muestra el número de alumnos inscritos en la clase seleccionada y el cupo máximo de la clase -->
-                    </div> <!-- Fin de la tarjeta para mostrar el número de alumnos inscritos en la clase seleccionada -->
-                </div> <!-- Tarjeta para mostrar el tiempo restante para el inicio de la clase seleccionada -->
-                <div class="stat-card"> <!-- Tarjeta para mostrar el tiempo restante para el inicio de la clase seleccionada -->
-                    <span class="card-icon">⏱️</span> <!-- Icono para representar el tiempo restante para el inicio de la clase seleccionada -->
-                    <div class="card-info"> <!-- Contenedor para la información de la tarjeta de tiempo restante para el inicio de la clase seleccionada -->
-                        <h3>Próxima Clase</h3> <!-- Título para la tarjeta de tiempo restante para el inicio de la clase seleccionada -->
-                        <p>En 2 hrs</p> <!-- Información que muestra el tiempo restante para el inicio de la clase seleccionada -->
-                    </div> <!-- Fin de la tarjeta para mostrar el tiempo restante para el inicio de la clase seleccionada -->
-                </div> <!-- Tarjeta para mostrar el porcentaje de alumnos que han confirmado su asistencia a la clase seleccionada -->
-            </section> <!-- Sección para mostrar las estadísticas de la clase seleccionada y la lista de alumnos inscritos en la próxima clase -->
+            <section class="card-section">
+                <div class="stat-card">
+                    <span class="card-icon">👥</span>
+                    <div class="card-info">
+                        <h3>Cupos Confirmados</h3>
+                        <p>35 / 50</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="card-icon">⏱️</span>
+                    <div class="card-info">
+                        <h3>Próxima Clase</h3>
+                        <p>En 2 hrs</p>
+                    </div>
+                </div>
+            </section>
 
-            <section class="data-table-container"> <!-- Sección para mostrar la tabla de alumnos inscritos en la próxima clase seleccionada -->
-                <div class="table-header"> <!-- Encabezado para la sección de tabla de alumnos inscritos en la próxima clase seleccionada -->
-                    <h2>Lista de Alumnos - 08:00 hrs</h2> <!-- Título para la sección de tabla de alumnos inscritos en la próxima clase seleccionada, mostrando el horario de la clase seleccionada -->
-                </div> <!-- Contenedor para la tabla de alumnos inscritos en la próxima clase seleccionada -->
-                <table> <!-- Tabla para listar a los alumnos inscritos en la próxima clase seleccionada -->
-                    <thead> <!-- Encabezado de la tabla con los títulos de las columnas para la tabla de alumnos inscritos en la próxima clase seleccionada -->
-                        <tr> <!-- Fila de encabezado de la tabla de alumnos inscritos en la próxima clase seleccionada -->
-                            <th>Alumno</th> <!-- Columna para el nombre del alumno inscrito en la próxima clase seleccionada -->
-                            <th>Edad</th> <!-- Columna para la edad del alumno inscrito en la próxima clase seleccionada -->
-                            <th style="text-align: center;">Asistencia</th> <!-- Columna para marcar la asistencia del alumno inscrito en la próxima clase seleccionada -->
-                        </tr> <!-- Fin de la fila de encabezado de la tabla de alumnos inscritos en la próxima clase seleccionada -->
-                    </thead> <!-- Cuerpo de la tabla con los alumnos inscritos en la próxima clase seleccionada -->
-                    <tbody> <!-- Cuerpo de la tabla con los alumnos inscritos en la próxima clase seleccionada -->
-                        <tr> <!-- Fila para el alumno Leon Alvarez inscrito en la próxima clase seleccionada -->
-                            <td><strong>Leon Alvarez</strong></td> <!-- Columna para el nombre del alumno Leon Alvarez inscrito en la próxima clase seleccionada -->
-                            <td>31 años</td> <!-- Columna para la edad del alumno Leon Alvarez inscrito en la próxima clase seleccionada -->
-                            <td style="text-align: center;"><button class="btn-check">Presente</button></td> <!-- Columna para marcar la asistencia del alumno Leon Alvarez inscrito en la próxima clase seleccionada, con un botón para marcarlo como presente -->
-                        </tr> <!-- Fila para el alumno Maria Gonzalez inscrito en la próxima clase seleccionada -->
-                        <tr> <!-- Fila para el alumno Maria Gonzalez inscrito en la próxima clase seleccionada -->
-                            <td><strong>Lukas Espinosa</strong></td> <!-- Columna para el nombre del alumno Maria Gonzalez inscrito en la próxima clase seleccionada -->
-                            <td>29 años</td> <!-- Columna para la edad del alumno Maria Gonzalez inscrito en la próxima clase seleccionada -->
-                            <td style="text-align: center;"><button class="btn-check">Presente</button></td> <!-- Columna para marcar la asistencia del alumno Maria Gonzalez inscrito en la próxima clase seleccionada, con un botón para marcarlo como presente -->
-                        </tr> <!-- Fila para el alumno Kiara Espinosa inscrito en la próxima clase seleccionada -->
-                        <tr> <!-- Fila para el alumno Kiara Espinosa inscrito en la próxima clase seleccionada -->
-                            <td><strong>Kiara Espinosa</strong></td> <!-- Columna para el nombre del alumno Kiara Espinosa inscrito en la próxima clase seleccionada -->
-                            <td>33 años</td> <!-- Columna para la edad del alumno Kiara Espinosa inscrito en la próxima clase seleccionada -->
-                            <td style="text-align: center;"><button class="btn-check">Presente</button></td> <!-- Columna para marcar la asistencia del alumno Kiara Espinosa inscrito en la próxima clase seleccionada, con un botón para marcarlo como presente -->
-                        </tr> <!-- Fila para el alumno Sofia Ramirez inscrito en la próxima clase seleccionada -->
-                    </tbody> <!-- Fin del cuerpo de la tabla con los alumnos inscritos en la próxima clase seleccionada -->
-                </table> <!-- Fin de la tabla de alumnos inscritos en la próxima clase seleccionada -->
-            </section> <!-- Fin de la sección para mostrar la tabla de alumnos inscritos en la próxima clase seleccionada -->
-        </main>
-    </div>
+            <section class="data-table-container">
+                <div class="table-header">
+                    <h2>Lista de Alumnos - 08:00 hrs</h2>
+                </div>
 
-    <script src="js/dashboards.js"></script>
+                <div style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; background: white; border-radius: 8px;">
+                    <table class="data-table" style="width: 100%; min-width: 600px; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th style="padding: 12px; text-align: left;">Alumno</th>
+                                <th style="padding: 12px; text-align: left;">Edad</th>
+                                <th style="padding: 12px; text-align: center;">Asistencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 12px;"><strong>Leon Alvarez</strong></td>
+                                <td style="padding: 12px;">31 años</td>
+                                <td style="padding: 12px; text-align: center;"><button class="btn-check">Presente</button></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;"><strong>Lukas Espinosa</strong></td>
+                                <td style="padding: 12px;">29 años</td>
+                                <td style="padding: 12px; text-align: center;"><button class="btn-check">Presente</button></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;"><strong>Kiara Espinosa</strong></td>
+                                <td style="padding: 12px;">33 años</td>
+                                <td style="padding: 12px; text-align: center;"><button class="btn-check">Presente</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section> 
+        </main> </div> <script src="js/dashboards.js"></script>
 </body>
 </html>

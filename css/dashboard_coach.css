@@ -130,3 +130,38 @@ td { padding: 15px 12px; border-bottom: 1px solid #eee; } /* Estilo para las cel
     width: auto; /* Mantiene la proporción del logo */
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); /* Opcional: le da un toque de profundidad al logo para que destaque más en el header del dashboard del coach */
 }
+
+/* --- ESTO ARREGLA EL CORTE EN CELULARES --- */
+@media (max-width: 768px) {
+    /* 1. Obliga a que el diseño sea una sola columna hacia abajo */
+    .main-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-x: hidden; /* Evita que la pantalla baile hacia los lados */
+    }
+
+    /* 2. La barra lateral deja de ser fija a la izquierda */
+    .sidebar {
+        width: 100% !important;
+        height: auto !important;
+        position: relative;
+        padding: 10px 0;
+    }
+
+    /* 3. El menú se estira a lo ancho para que no se corte el texto */
+    .menu-list {
+        display: flex;
+        flex-direction: row; /* Los botones se ponen uno al lado del otro */
+        flex-wrap: wrap;    /* Si no caben, bajan a la siguiente línea */
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* 4. El contenido principal ahora usa todo el ancho disponible */
+    .content {
+        width: 100% !important;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+}

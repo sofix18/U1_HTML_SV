@@ -49,51 +49,57 @@
                     <h3>TOTAL REGISTROS</h3> <!-- Título de la tarjeta que indica que se muestra el número total de registros en el sistema -->
                     <p class="value">1,254 📈</p> <!-- Valor numérico que representa la cantidad total de registros en el sistema, con un ícono de gráfico para indicar crecimiento -->
                 </div> <!-- Tarjeta para mostrar el número de sedes activas en el sistema -->
-            </div> <!-- Fin de la sección de estadísticas rápidas con tarjetas para el dashboard del administrador -->
+            </div > <!-- Fin de la sección de estadísticas rápidas con tarjetas para el dashboard del administrador -->
 
-            <section class="table-section"> <!-- Sección para mostrar la tabla de gestión de usuarios recientes -->
-                <h2>👥 Gestión de Usuarios Recientes</h2> <!-- Título de la sección que indica que se muestra la gestión de usuarios recientes, con un ícono de personas para representar la sección -->
-                <table class="data-table"> <!-- Tabla para mostrar la información de los usuarios recientes en el sistema -->
-                    <thead> <!-- Encabezado de la tabla con los títulos de las columnas para la gestión de usuarios recientes -->
-                        <tr> <!-- Fila del encabezado de la tabla con los títulos de las columnas para la gestión de usuarios recientes -->
-                            <th>Nombre</th> <!-- Columna para mostrar el nombre de los usuarios recientes en el sistema -->
-                            <th>Correo</th> <!-- Columna para mostrar el correo electrónico de los usuarios recientes en el sistema -->
-                            <th>Rol</th> <!-- Columna para mostrar el rol de los usuarios recientes en el sistema (Admin, Coach, Usuario) -->
-                            <th>Acción</th> <!-- Columna para mostrar las acciones disponibles para gestionar a los usuarios recientes en el sistema (por ejemplo, un botón para gestionar cada usuario) -->
-                        </tr> <!-- Fin de la fila del encabezado de la tabla para la gestión de usuarios recientes -->
-                    </thead> <!-- Fin del encabezado de la tabla para la gestión de usuarios recientes -->
-                    <tbody> <!-- Cuerpo de la tabla para mostrar las filas con la información de los usuarios recientes en el sistema -->
-                        <tr> <!-- Fila de la tabla para mostrar la información de un usuario reciente en el sistema -->
-                            <td><strong>Javiera Soto</strong></td> <!-- Columna para mostrar el nombre del usuario reciente, con formato en negrita para resaltar el nombre -->
-                            <td>javi.soto@gmail.com</td> <!-- Columna para mostrar el correo electrónico del usuario reciente -->
-                            <td><span class="badge admin">Admin</span></td> <!-- Columna para mostrar el rol del usuario reciente, con un estilo de badge para resaltar el rol de Admin -->
-                            <td><button class="btn-action">Gestionar</button></td> <!-- Columna para mostrar un botón de acción para gestionar al usuario reciente, con un estilo de botón para resaltar la acción disponible -->
-                        </tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
-                        <tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
-                            <td><strong>Claudio Diaz</strong></td> <!-- Columna para mostrar el nombre del usuario reciente, con formato en negrita para resaltar el nombre -->
-                            <td>claudio.81@mail.com</td> <!-- Columna para mostrar el correo electrónico del usuario reciente -->
-                            <td><span class="badge coach">Coach</span></td> <!-- Columna para mostrar el rol del usuario reciente, con un estilo de badge para resaltar el rol de Coach -->
-                            <td><button class="btn-action">Gestionar</button></td> <!-- Columna para mostrar un botón de acción para gestionar al usuario reciente, con un estilo de botón para resaltar la acción disponible -->
-                        </tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
-                        <tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
-                            <td><strong>Leon Alvarez</strong></td> <!-- Columna para mostrar el nombre del usuario reciente, con formato en negrita para resaltar el nombre -->
-                            <td>leon.alvarez@gmail.com</td> <!-- Columna para mostrar el correo electrónico del usuario reciente -->
-                            <td><span class="badge user">Usuario</span></td> <!-- Columna para mostrar el rol del usuario reciente, con un estilo de badge para resaltar el rol de Usuario -->
-                            <td><button class="btn-action">Gestionar</button></td> <!-- Columna para mostrar un botón de acción para gestionar al usuario reciente, con un estilo de botón para resaltar la acción disponible -->
-                        </tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
-                        <tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
-                            <td><strong>Javiera Ruiz</strong></td> <!-- Columna para mostrar el nombre del usuario reciente, con formato en negrita para resaltar el nombre -->
-                            <td>kiara.espinosa@gmail.com</td> <!-- Columna para mostrar el correo electrónico del usuario reciente -->
-                            <td><span class="badge user">Usuario</span></td> <!-- Columna para mostrar el rol del usuario reciente, con un estilo de badge para resaltar el rol de Usuario -->
-                            <td><button class="btn-action">Gestionar</button></td> <!-- Columna para mostrar un botón de acción para gestionar al usuario reciente, con un estilo de botón para resaltar la acción disponible -->
-                        </tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
-                        <tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
-                            <td><strong>Lukas Espinosa</strong></td> <!-- Columna para mostrar el nombre del usuario reciente, con formato en negrita para resaltar el nombre -->
-                            <td>lukas.espinosa@gmail.com</td> <!-- Columna para mostrar el correo electrónico del usuario reciente -->
-                            <td><span class="badge user">Usuario</span></td> <!-- Columna para mostrar el rol del usuario reciente, con un estilo de badge para resaltar el rol de Usuario -->
-                            <td><button class="btn-action">Gestionar</button></td> <!-- Columna para mostrar un botón de acción para gestionar al usuario reciente, con un estilo de botón para resaltar la acción disponible -->
-                        </tr> <!-- Fila de la tabla para mostrar la información de otro usuario reciente en el sistema -->
-                        </main>
+            <section class="table-section">
+    <h2>👥 Gestión de Usuarios Recientes</h2>
+
+    <div style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Rol</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Javiera Soto</strong></td>
+                    <td>javi.soto@gmail.com</td>
+                    <td><span class="badge admin">Admin</span></td>
+                    <td><button class="btn-action">Gestionar</button></td>
+                </tr>
+                <tr>
+                    <td><strong>Claudio Diaz</strong></td>
+                    <td>claudio.81@mail.com</td>
+                    <td><span class="badge coach">Coach</span></td>
+                    <td><button class="btn-action">Gestionar</button></td>
+                </tr>
+                <tr>
+                    <td><strong>Leon Alvarez</strong></td>
+                    <td>leon.alvarez@gmail.com</td>
+                    <td><span class="badge user">Usuario</span></td>
+                    <td><button class="btn-action">Gestionar</button></td>
+                </tr>
+                <tr>
+                    <td><strong>Javiera Ruiz</strong></td>
+                    <td>kiara.espinosa@gmail.com</td>
+                    <td><span class="badge user">Usuario</span></td>
+                    <td><button class="btn-action">Gestionar</button></td>
+                </tr>
+                <tr>
+                    <td><strong>Lukas Espinosa</strong></td>
+                    <td>lukas.espinosa@gmail.com</td>
+                    <td><span class="badge user">Usuario</span></td>
+                    <td><button class="btn-action">Gestionar</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div> </section>
     </div>
 
     <script src="js/dashboards.js"></script>
