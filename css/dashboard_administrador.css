@@ -127,62 +127,64 @@ body { background-color: #f0f2f5; color: #333; } /* Fondo claro y texto oscuro p
     align-items: center; /* Centra verticalmente el logo con el texto */
 }
 
-/* --- ARREGLO FINAL ADMIN CELULAR --- */
+/* --- FIX ABSOLUTO PARA MÓVILES --- */
 @media screen and (max-width: 768px) {
-    
-    /* 1. Evitamos que el fondo morado tape todo */
-    .main-wrapper, .container-dash {
-        display: block !important; /* Cambiamos flex por block para que el contenido baje */
-        overflow: visible !important;
-    }
-
-    /* 2. Ajustamos el sidebar para que sea una franja pequeña */
-    .sidebar {
+    /* 1. Reset de estructura: Matamos el Flexbox de escritorio */
+    .container-dash, 
+    .main-wrapper {
+        display: block !important; /* Apila todo verticalmente */
         width: 100% !important;
-        height: auto !important; /* Quitamos el 100vh que causa el problema */
-        min-height: 80px !important; 
-        position: relative !important;
-        padding: 5px 0 !important;
-        background-color: #7f47f6 !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    /* 3. Ponemos los iconos en una sola fila para ahorrar espacio */
+    /* 2. Sidebar: Lo sacamos de la izquierda y lo ponemos arriba */
+    .sidebar {
+        position: relative !important; /* Lo suelta de la pared izquierda */
+        width: 100% !important;
+        height: auto !important;
+        min-height: 60px !important;
+        left: 0 !important;
+        top: 0 !important;
+        padding: 5px 0 !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+    }
+
+    /* 3. Menú: En lugar de lista vertical, hacemos una fila deslizable */
     .sidebar ul {
         display: flex !important;
         flex-direction: row !important;
-        justify-content: space-around !important;
-        overflow-x: auto !important;
-        padding: 5px !important;
-        margin: 0 !important;
+        overflow-x: auto !important; /* Si hay muchos botones, se deslizan con el dedo */
+        padding: 5px 10px !important;
+        gap: 15px !important;
+        -webkit-overflow-scrolling: touch;
     }
 
     .sidebar ul li {
-        margin: 5px !important;
         list-style: none !important;
+        margin: 0 !important;
     }
 
     .sidebar ul li a {
-        font-size: 10px !important;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: white;
-        text-decoration: none;
+        white-space: nowrap !important; /* Evita que el texto se rompa */
+        font-size: 13px !important;
+        padding: 8px 12px !important;
+        background: rgba(255,255,255,0.1);
+        border-radius: 4px;
     }
 
-    /* 4. Forzamos que el contenido principal aparezca DEBAJO */
-    .main-content, .content {
+    /* 4. Contenido: Le damos todo el espacio de la pantalla */
+    .content, 
+    .main-content {
         width: 100% !important;
-        margin-left: 0 !important;
-        padding: 20px !important;
-        background-color: white !important;
+        margin: 0 !important;
+        padding: 15px !important;
         display: block !important;
     }
 
-    /* 5. Aseguramos que los títulos y tarjetas se vean */
-    .content h1, .content h2 {
-        font-size: 20px !important;
-        margin-top: 10px !important;
+    /* 5. Ajuste de Tablas: Evitamos que empujen el diseño */
+    .data-table-container, .table-section {
+        width: 100% !important;
+        overflow-x: auto !important; /* Permite scroll horizontal en la tabla */
     }
 }
