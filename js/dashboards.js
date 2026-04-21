@@ -1,28 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Recuperar el usuario del localStorage
-    const sessionData = localStorage.getItem("user");
-    const user = JSON.parse(sessionData);
+// js/dashboards.js
 
-    // 2. Seguridad: Si no hay usuario, expulsar al login
-    if (!user) {
-        window.location.href = "index.html";
-        return;
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Mostrar el nombre del usuario logueado en el <span>
+    const userData = JSON.parse(localStorage.getItem("user"));
+    const userNameDisplay = document.getElementById('userNameDisplay');
+
+    if (userData && userNameDisplay) {
+        userNameDisplay.textContent = userData.name;
     }
 
-    //  Personalización: Buscar el ID 'userNameDisplay' y escribir el nombre
-    const nameDisplay = document.getElementById("userNameDisplay");
-    if (nameDisplay) {
-        nameDisplay.textContent = user.name;
-    }
+    // 2. Lógica para el botón de Cerrar Sesión
+    const btnLogout = document.getElementById('btnLogout');
 
-    //  Lógica de Logout: Buscar el botón de cerrar sesión
-    const btnLogout = document.getElementById("btnLogout");
     if (btnLogout) {
-        btnLogout.addEventListener("click", (e) => {
-            e.preventDefault(); // Evitar que el enlace navegue antes de limpiar
+        btnLogout.addEventListener('click', (e) => {
+            e.preventDefault(); // Evita que el enlace '#' recargue la página
             
-            // Limpiar datos y redirigir
+            // Borramos los datos de sesión para que nadie entre sin permiso
             localStorage.removeItem("user");
+            
+            // Redirigimos al login
             window.location.href = "login.html";
         });
     }
