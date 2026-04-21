@@ -127,76 +127,62 @@ body { background-color: #f0f2f5; color: #333; } /* Fondo claro y texto oscuro p
     align-items: center; /* Centra verticalmente el logo con el texto */
 }
 
-/* --- SOLO PARA CELULARES (ADMIN) --- */
+/* --- ARREGLO FINAL ADMIN CELULAR --- */
 @media screen and (max-width: 768px) {
     
-    /* 1. Navbar: Evitamos que el logo y botones choquen */
-    .dash-nav {
-        flex-direction: column !important;
-        height: auto !important;
-        padding: 10px !important;
-    }
-
-    .nav-right {
-        margin-top: 10px;
-        display: flex;
-        gap: 10px;
-    }
-
-    /* 2. Contenedor: Pasamos de horizontal a vertical */
+    /* 1. Evitamos que el fondo morado tape todo */
     .main-wrapper, .container-dash {
-        flex-direction: column !important;
+        display: block !important; /* Cambiamos flex por block para que el contenido baje */
+        overflow: visible !important;
     }
 
-    /* 3. Sidebar: Se convierte en un menú superior horizontal */
+    /* 2. Ajustamos el sidebar para que sea una franja pequeña */
     .sidebar {
         width: 100% !important;
-        height: auto !important;
-        min-height: auto !important;
+        height: auto !important; /* Quitamos el 100vh que causa el problema */
+        min-height: 80px !important; 
         position: relative !important;
         padding: 5px 0 !important;
-        background-color: #9b6dff !important; /* Mantenemos tu color morado */
+        background-color: #7f47f6 !important;
     }
 
+    /* 3. Ponemos los iconos en una sola fila para ahorrar espacio */
     .sidebar ul {
         display: flex !important;
         flex-direction: row !important;
-        overflow-x: auto !important; /* Scroll lateral para los botones */
-        white-space: nowrap !important;
-        padding: 10px !important;
-        -webkit-overflow-scrolling: touch;
+        justify-content: space-around !important;
+        overflow-x: auto !important;
+        padding: 5px !important;
+        margin: 0 !important;
     }
 
     .sidebar ul li {
-        margin: 0 10px !important;
-        display: inline-block !important;
+        margin: 5px !important;
+        list-style: none !important;
     }
 
     .sidebar ul li a {
+        font-size: 10px !important;
+        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-size: 11px !important;
-        text-align: center;
+        color: white;
+        text-decoration: none;
     }
 
-    /* 4. Contenido: Ahora usa todo el ancho disponible */
+    /* 4. Forzamos que el contenido principal aparezca DEBAJO */
     .main-content, .content {
         width: 100% !important;
         margin-left: 0 !important;
-        padding: 15px !important;
-    }
-
-    /* 5. Tablas y Tarjetas: Evitamos que se estiren al infinito */
-    .cards-container {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 10px;
-    }
-
-    /* La tabla ahora se podrá deslizar con el dedo */
-    .table-section {
-        overflow-x: auto !important;
+        padding: 20px !important;
+        background-color: white !important;
         display: block !important;
+    }
+
+    /* 5. Aseguramos que los títulos y tarjetas se vean */
+    .content h1, .content h2 {
+        font-size: 20px !important;
+        margin-top: 10px !important;
     }
 }
