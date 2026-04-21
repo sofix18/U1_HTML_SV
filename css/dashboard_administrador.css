@@ -127,64 +127,30 @@ body { background-color: #f0f2f5; color: #333; } /* Fondo claro y texto oscuro p
     align-items: center; /* Centra verticalmente el logo con el texto */
 }
 
-/* --- FIX ABSOLUTO PARA MÓVILES --- */
-@media screen and (max-width: 768px) {
-    /* 1. Reset de estructura: Matamos el Flexbox de escritorio */
-    .container-dash, 
+/* --- ESTRUCTURA FIJA ESTILO USUARIO --- */
+@media screen and (max-width: 1024px) {
+    html, body {
+        min-width: 1200px !important;
+        overflow-x: auto !important;
+    }
+
     .main-wrapper {
-        display: block !important; /* Apila todo verticalmente */
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* 2. Sidebar: Lo sacamos de la izquierda y lo ponemos arriba */
-    .sidebar {
-        position: relative !important; /* Lo suelta de la pared izquierda */
-        width: 100% !important;
-        height: auto !important;
-        min-height: 60px !important;
-        left: 0 !important;
-        top: 0 !important;
-        padding: 5px 0 !important;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
-    }
-
-    /* 3. Menú: En lugar de lista vertical, hacemos una fila deslizable */
-    .sidebar ul {
         display: flex !important;
         flex-direction: row !important;
-        overflow-x: auto !important; /* Si hay muchos botones, se deslizan con el dedo */
-        padding: 5px 10px !important;
-        gap: 15px !important;
-        -webkit-overflow-scrolling: touch;
+        width: 1200px !important;
     }
 
-    .sidebar ul li {
-        list-style: none !important;
-        margin: 0 !important;
+    .sidebar {
+        width: 250px !important;
+        min-height: 100vh !important;
+        position: sticky !important;
+        top: 0;
+        background-color: #7e57c2 !important; /* Morado Admin */
     }
 
-    .sidebar ul li a {
-        white-space: nowrap !important; /* Evita que el texto se rompa */
-        font-size: 13px !important;
-        padding: 8px 12px !important;
-        background: rgba(255,255,255,0.1);
-        border-radius: 4px;
-    }
-
-    /* 4. Contenido: Le damos todo el espacio de la pantalla */
-    .content, 
     .main-content {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 15px !important;
-        display: block !important;
-    }
-
-    /* 5. Ajuste de Tablas: Evitamos que empujen el diseño */
-    .data-table-container, .table-section {
-        width: 100% !important;
-        overflow-x: auto !important; /* Permite scroll horizontal en la tabla */
+        flex: 1 !important;
+        width: 950px !important;
+        padding: 20px !important;
     }
 }
