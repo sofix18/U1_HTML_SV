@@ -1,6 +1,15 @@
 <!DOCTYPE html> <!-- dashboard_usuario.html -->
 <html lang="es"> <!-- Página de Dashboard para Usuarios de SportClub -->
-<head> <!-- Encabezado de la página -->
+<head> <!-- Encabezado de la página --> 
+    <!-- BLOQUEO DE SEGURIDAD -->
+    <script>
+        if (!localStorage.getItem('user')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8"> <!-- Codificación de caracteres -->
     <title>SportClub - Dashboard Usuario</title> <!-- Título de la página -->
     <link rel="stylesheet" href="css/dashboard_usuario.css"> <!-- Enlace al archivo CSS para estilos específicos del dashboard de usuario -->

@@ -230,3 +230,36 @@ Durante el desarrollo, surgieron inconsistencias que requirieron intervención m
 
    (Igual deje las otras evidencias del dashboard adminitrador el la carpeta docss_de_la_IA).
 
+Comandos de Control de Versiones (Git)
+
+1. Creación de Rama de Trabajo:
+
+git checkout -b feature/login_register_api
+
+2. Preparación de los Archivos:
+
+git add .
+
+3. Registro de Avances (Commit):
+
+git commit -m "feat
+
+4. Subir al Repositorio (Push):
+
+git push origin feature/login_register_api
+
+tambien trabaje con los comando de Desarrollo
+
+Live Server: Use la extensión de VS Code para previsualizar los cambios en tiempo real en la dirección local 127.0.0.1:5500.
+
+tuve algunos problemas al intentar ingresar con los usuarios del README del backend (admin1@demo.cl), el sistema devolvía el error "Usuario o contraseña incorrectos" a pesar de estar bien escritos.
+
+Evidencia:![problema de no ocupar el live server](problema_liveserver.png), [problema de no ocupar el live server](extencionnodescargada.png)
+
+una ves que instale esa extencion si me dejo entrar
+
+Evidencia:[dejo entrar](cuandosedescargo.png), donde sale open whith live server uno picha ahi y se habre automaticamente el login
+Evidencia:[cuando ya pude entrar](cuandofunciono.png)
+
+ya que sin esa extensión, el navegador bloquea la conexión por seguridad y no te deja entrar aunque pongas bien los usuarios del README. Al usar Live Server, tu carpeta se convierte en una "página de verdad" y el navegador deja pasar los datos.
+

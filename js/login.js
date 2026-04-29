@@ -1,41 +1,44 @@
-//  Lista de usuarios
-const users = [
-    { user: "usuario@sportclub.cl", password: "1234", role: "user", name: "Kiara Espinosa" }, 
-    { user: "coach@sportclub.cl", password: "1234", role: "coach", name: "Claudio Diaz" },
-    { user: "administrador@sportclub.cl", password: "1234", role: "admin", name: "Admin Central" }
-];
-
-// tiempo de esperar a que el HTML esté listo
-document.addEventListener('DOMContentLoaded', () => { // 
+document.addEventListener('DOMContentLoaded', () => { 
     const loginForm = document.getElementById('loginForm');
 
     if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Evita que la página se recargue
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-            // Capturar datos y limpiar espacios vacíos
-            const emailInput = document.getElementById('email').value.trim();
-            const passwordInput = document.getElementById('password').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
             const errorMessage = document.getElementById('error-message');
 
-            // Buscar coincidencia
-            const foundUser = users.find(u => u.user === emailInput && u.password === passwordInput);
+            try {
+                const response = await fetch('http://localhost:3000/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
 
-            if (foundUser) {
-                // Guardar la sesión en el navegador
-                localStorage.setItem("user", JSON.stringify(foundUser));
+                const data = await response.json();
 
-                // 4. Redirección por ROL
-                if (foundUser.role === "admin") {
-                    window.location.href = "dashboard_administrador.html";
-                } else if (foundUser.role === "coach") {
-                    window.location.href = "dashboard_coach.html";
+                if (data.ok) {
+                    // Guardamos token y datos del usuario
+                    localStorage.setItem('token', data.data.token);
+                    localStorage.setItem('user', JSON.stringify(data.data.user));
+
+                    // Redirección por ROL según la API
+                    const role = data.data.user.role;
+                    if (role === 'admin') {
+                        window.location.href = 'dashboard_administrador.html';
+                    } else if (role === 'coach') {
+                        window.location.href = 'dashboard_coach.html';
+                    } else if (role === 'user') {
+                        window.location.href = 'dashboard_usuario.html';
+                    }
                 } else {
-                    window.location.href = "dashboard_usuario.html";
+                    errorMessage.textContent = data.message || "Credenciales inválidas";
+                    errorMessage.style.display = "block";
                 }
-            } else {
-                //  mostrar el mensaje rojo
-                errorMessage.textContent = "Usuario o contraseña incorrectos";
+            } catch (error) {
+                console.error("Error:", error);
+                errorMessage.textContent = "Error al conectar con el servidor";
                 errorMessage.style.display = "block";
             }
         });

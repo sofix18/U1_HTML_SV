@@ -1,6 +1,16 @@
 <!DOCTYPE html> <!-- Archivo: dashboard_administrador.html -->
 <html lang="es"> <!-- Página de Dashboard para Administradores de SportClub -->
 <head> <!-- Metadatos y enlace a CSS para el Dashboard del Administrador -->
+    <!-- BLOQUEO DE SEGURIDAD -->
+    <script>
+        if (!localStorage.getItem('user')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+    
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head> 
     <meta charset="UTF-8"> <!-- Codificación de caracteres para soporte en español -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración para diseño responsivo -->
     <title>SportClub - Administrador Central</title> <!-- Título de la página que aparece en la pestaña del navegador -->
@@ -51,7 +61,7 @@
                 </div> <!-- Tarjeta para mostrar el número de sedes activas en el sistema -->
             </div > <!-- Fin de la sección de estadísticas rápidas con tarjetas para el dashboard del administrador -->
 
-            <section class="table-section">
+            <section class="table-section"> 
     <h2>👥 Gestión de Usuarios Recientes</h2>
 
     <div style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;">
@@ -59,7 +69,7 @@
         <table class="data-table">
             <thead>
                 <tr>
-                    <th>Nombre</th>
+                    <th>Nombre</th> 
                     <th>Correo</th>
                     <th>Rol</th>
                     <th>Acción</th>
