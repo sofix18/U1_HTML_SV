@@ -19,17 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (data.ok) {
-                    // Guardamos token y datos del usuario
-                    localStorage.setItem('token', data.data.token);
-                    localStorage.setItem('user', JSON.stringify(data.data.user));
+                    const user = data.data.user;
+                    const token = data.data.token;
+                    
+                    localStorage.setItem('token', token);
+                    localStorage.setItem('user', JSON.stringify(user));
 
-                    // Redirección por ROL según la API
-                    const role = data.data.user.role;
-                    if (role === 'admin') {
-                        window.location.href = 'dashboard_administrador.html';
-                    } else if (role === 'coach') {
+                    const role = (user.role || user.rol || "").toLowerCase();
+
+                    if (role.includes('coach') || user.email.includes('coach')) {
                         window.location.href = 'dashboard_coach.html';
-                    } else if (role === 'user') {
+                    } else if (role.includes('admin') || user.email.includes('admin')) {
+                        window.location.href = 'dashboard_administrador.html';
+                    } else {
                         window.location.href = 'dashboard_usuario.html';
                     }
                 } else {
@@ -38,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (error) {
                 console.error("Error:", error);
-                errorMessage.textContent = "Error al conectar con el servidor";
+                errorMessage.textContent = "Servidor apagado. Ejecuta npm run dev";
                 errorMessage.style.display = "block";
             }
         });

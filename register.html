@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - SportClub</title>
     <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <main class="container">
@@ -17,7 +19,6 @@
             <h2>Crea tu cuenta</h2>
             <p style="margin-bottom: 1.5rem; font-size: 0.9rem; color: #666;">Completa el formulario para crear tu cuenta.</p>
 
-            <!-- 1. Agregado id="registerForm" -->
             <form id="registerForm" action="#"> 
                 <div class="input-group">
                     <label for="reg-email">Correo electrónico *</label>
@@ -26,12 +27,15 @@
 
                 <div class="input-group">
                     <label for="reg-password">Contraseña *</label>
-                    <input type="password" id="reg-password" placeholder="Mínimo 8 caracteres" required> 
+                    <input type="password" id="reg-password" placeholder="Mínimo 8 caracteres" required>
+                    <div class="input-group">
+                        <label for="reg-password-confirm">Repetir contraseña *</label>
+                        <input type="password" id="reg-password-confirm" placeholder="Repite tu contraseña" required> 
+                </div> 
                 </div>
 
                 <div class="input-group">
                     <label for="reg-name">Nombre completo</label>
-                    <!-- 2. Cambiado id a "reg-name" -->
                     <input type="text" id="reg-name" placeholder="Tu nombre"> 
                 </div>
                 
@@ -48,7 +52,7 @@
             </form>
         </section>
     </main>
-    <!-- 3. Enlace al archivo JavaScript -->
+
     <script src="js/register.js"></script>
 </body>
 </html>
