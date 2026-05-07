@@ -5,54 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - SportClub</title>
     <link rel="stylesheet" href="css/style.css">
-    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <main class="container">
-        <section class="card">
-            <div class="back-container">
-                <a href="login.html" class="btn-back">← Volver al inicio de sesión</a>
+    <div class="container">
+        <div class="card">
+            <div class="back-container" style="margin-bottom: 2.5rem; text-align: left;">
+                <a href="login.html" class="btn-back" style="text-decoration: none; color: rgba(255,255,255,0.6);">← Volver al login</a>
             </div>
-
+            
             <img src="image/logo_empresa_letra_v1.png" alt="SportClub Logo" class="logo">
-            <h2>Crea tu cuenta</h2>
-            <p style="margin-bottom: 1.5rem; font-size: 0.9rem; color: #666;">Completa el formulario para crear tu cuenta.</p>
+            
+            <h2 style="margin-bottom: 1.5rem; color: white;">Registrarse</h2>
 
-            <form id="registerForm" action="#"> 
+            <form id="registerForm">
                 <div class="input-group">
-                    <label for="reg-email">Correo electrónico *</label>
-                    <input type="email" id="reg-email" placeholder="ejemplo@correo.com" required> 
+                    <label style="color: white; display: block; margin-bottom: 8px;">Nombre Completo</label>
+                    <input type="text" id="reg-name" placeholder="Tu nombre" required>
                 </div>
 
                 <div class="input-group">
-                    <label for="reg-password">Contraseña *</label>
-                    <input type="password" id="reg-password" placeholder="Mínimo 8 caracteres" required>
-                    <div class="input-group">
-                        <label for="reg-password-confirm">Repetir contraseña *</label>
-                        <input type="password" id="reg-password-confirm" placeholder="Repite tu contraseña" required> 
-                </div> 
+                    <label style="color: white; display: block; margin-bottom: 8px;">Email</label>
+                    <input type="email" id="reg-email" placeholder="correo@ejemplo.com" required>
                 </div>
 
                 <div class="input-group">
-                    <label for="reg-name">Nombre completo</label>
-                    <input type="text" id="reg-name" placeholder="Tu nombre"> 
+                    <label style="color: white; display: block; margin-bottom: 8px;">Contraseña</label>
+                    <input type="password" id="reg-password" placeholder="********" required>
                 </div>
-                
+
                 <div class="input-group">
-                    <label for="nivel">Nivel de condición física</label>
-                    <select id="nivel" style="width: 100%; padding: 0.8rem; border: 1.5px solid #4b1d6e; border-radius: 6px; background: white;">
-                        <option value="principiante">Principiante</option>
-                        <option value="intermedio">Intermedio</option>
-                        <option value="avanzado">Avanzado</option>
+                    <label style="color: white; display: block; margin-bottom: 8px;">Confirmar Contraseña</label>
+                    <input type="password" id="reg-password-confirm" placeholder="********" required>
+                </div>
+
+                <div class="input-group">
+                    <label style="color: white; display: block; margin-bottom: 8px;">Nivel de condición física</label>
+                    <select id="nivel" required 
+                        style="width: 100%; 
+                               padding: 12px; 
+                               border: 1px solid rgba(255, 255, 255, 0.2); 
+                               border-radius: 12px; 
+                               background: rgba(255, 255, 255, 0.15); 
+                               color: white; 
+                               outline: none; 
+                               appearance: none; 
+                               -webkit-appearance: none;
+                               background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'white\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpolyline points=\'6 9 12 15 18 9\'%3E%3C/polyline%3E%3C/svg%3E');
+                               background-repeat: no-repeat;
+                               background-position: right 12px center;
+                               background-size: 16px;">
+                        <option value="" disabled selected style="background-color: #302b63;">Selecciona tu nivel</option>
+                        <option value="principiante" style="background-color: #302b63;">Principiante</option>
+                        <option value="intermedio" style="background-color: #302b63;">Intermedio</option>
+                        <option value="avanzado" style="background-color: #302b63;">Avanzado</option>
                     </select>
                 </div>
 
-                <button type="submit" class="btn-login">Registrarse</button>
+                <button type="submit" class="btn-login" style="width: 100%; padding: 14px; border-radius: 12px; font-weight: bold; margin-top: 20px; cursor: pointer; border: none; background: white; color: #302b63;">Crear Cuenta</button>
             </form>
-        </section>
-    </main>
-
+        </div>
+    </div>
     <script src="js/register.js"></script>
 </body>
 </html>
