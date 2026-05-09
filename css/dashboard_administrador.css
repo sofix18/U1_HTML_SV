@@ -154,3 +154,8 @@ body { background-color: #f0f2f5; color: #333; } /* Fondo claro y texto oscuro p
         padding: 20px !important;
     }
 }
+#btnNuevoUsuario {
+    margin-top: 20px; /* Baja el botón */
+    margin-bottom: 20px; /* Lo separa de la tabla */
+    display: inline-block;
+}
