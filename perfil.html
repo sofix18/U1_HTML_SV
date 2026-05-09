@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportClub - Mi Perfil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+    <div id="toastContainer" class="toast-container"></div>
+
+    <div class="glass-panel">
+        <aside class="profile-sidebar">
+            <div class="avatar-wrapper">
+                <div id="userInitials" class="initials-avatar">--</div>
+                <button class="edit-photo-btn" id="btnShowMenu">📷</button>
+                
+                <div class="photo-menu" id="photoMenu">
+                    <button id="optionGallery">📁 Galería</button>
+                    <button id="optionCamera">📸 Tomar Foto</button>
+                    <hr style="border: 0.5px solid rgba(255,255,255,0.1); margin: 5px 0;">
+                    <button id="optionDelete" style="color: #ff4d4d;">🗑️ Eliminar</button>
+                </div>
+            </div>
+
+            <h2 id="sideName">Cargando...</h2>
+            <div class="role-badge">MIEMBRO DE SPORTCLUB</div>
+            
+            <div class="sidebar-data">
+                <p class="data-label">CORREO ELECTRÓNICO</p>
+                <p id="sideEmail" class="data-value">---</p>
+                <p class="data-label">MIEMBRO DESDE</p>
+                <p class="data-value">Mayo 2026</p>
+            </div>
+
+            <button onclick="window.history.back()" class="btn-outline">Volver al Dashboard</button>
+        </aside>
+
+        <main class="profile-content">
+            <section class="section-card">
+                <h3>Información Personal</h3>
+                <div class="form-grid">
+                    <div class="input-group"><label>Nombre Completo</label><input type="text" id="inputName"></div>
+                    <div class="input-group"><label>Email</label><input type="email" id="inputEmail"></div>
+                    <div class="input-group"><label>Fecha de Nacimiento</label><input type="date" id="inputBirth"></div>
+                    <div class="input-group"><label>Teléfono</label><input type="text" id="inputPhone" placeholder="+56 9..."></div>
+                    <div class="input-group full"><label>Biografía / Presentación</label><textarea id="inputBio" rows="3" placeholder="Cuéntanos sobre ti..."></textarea></div>
+                </div>
+                <button class="btn-action" id="btnGuardar">Guardar Perfil</button>
+            </section>
+
+            <section class="section-card">
+                <h3>Seguridad</h3>
+                <div class="form-grid">
+                    <div class="input-group"><label>Nueva Contraseña</label><input type="password" id="newPass" placeholder="Mínimo 8 caracteres"></div>
+                    <div class="input-group"><label>Confirmar Contraseña</label><input type="password" id="confirmPass" placeholder="Repite la clave"></div>
+                </div>
+                <button class="btn-action btn-secondary" id="btnPass">Actualizar Clave</button>
+            </section>
+        </main>
+    </div>
+
+    <div id="cameraModal" class="camera-modal">
+        <video id="video" autoplay></video>
+        <button id="snap">Capturar</button>
+        <button id="closeCamera" class="btn-close">×</button>
+    </div>
+
+    <script src="js/perfil.js"></script>
+</body>
+</html>

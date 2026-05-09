@@ -1,0 +1,62 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+
+body { 
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle at top left, #071e3d, #000); color: white; padding: 20px;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px;
+    display: flex; max-width: 1000px; width: 100%; padding: 40px; box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+.profile-sidebar { flex: 1; border-right: 1px solid rgba(255, 255, 255, 0.1); padding-right: 40px; display: flex; flex-direction: column; align-items: center; }
+
+.avatar-wrapper { position: relative; margin-bottom: 25px; }
+.initials-avatar { width: 120px; height: 120px; background: white; color: #071e3d; font-size: 45px; font-weight: 600; display: flex; align-items: center; justify-content: center; border-radius: 50%; overflow: hidden; }
+.edit-photo-btn { position: absolute; bottom: 5px; right: 5px; background: #00bcd4; border: 3px solid #1a2a3a; color: white; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+
+.photo-menu { display: none; position: absolute; top: 130px; background: #162435; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; width: 150px; z-index: 100; padding: 5px 0; }
+.photo-menu button { width: 100%; padding: 10px 15px; border: none; background: none; color: white; text-align: left; cursor: pointer; font-size: 13px; }
+
+.role-badge { font-size: 10px; background: #00bcd4; padding: 6px 15px; border-radius: 50px; margin: 15px 0 25px; }
+.data-label { font-size: 9px; opacity: 0.5; margin-bottom: 4px; }
+.data-value { font-size: 13px; margin-bottom: 15px; }
+
+.profile-content { flex: 2; padding-left: 40px; }
+h3 { color: #00bcd4; margin-bottom: 25px; font-size: 18px; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.full { grid-column: span 2; }
+.input-group label { display: block; font-size: 12px; margin-bottom: 8px; opacity: 0.8; }
+input, textarea { width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px; border-radius: 10px; color: white; outline: none; }
+
+/* ALINEACIÓN DE BOTONES */
+.btn-action { 
+    display: block; 
+    margin-left: auto; 
+    width: 170px; /* Tamaño fijo igual para ambos */
+    padding: 12px 0; 
+    border-radius: 10px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    border: none;
+    text-align: center;
+}
+
+#btnGuardar { background: #00bcd4; color: white; margin-top: 15px; }
+#btnPass { background: #455a64; color: white; margin-top: 25px; } /* Más abajo */
+
+.btn-outline { background: none; border: 1px solid rgba(255,255,255,0.2); color: white; padding: 10px; border-radius: 10px; width: 100%; margin-top: 20px; cursor: pointer; }
+
+/* TOASTS */
+.toast-container { position: fixed; top: 20px; right: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 10px; }
+.toast { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 12px 20px; border-radius: 8px; border-left: 5px solid #00bcd4; transform: translateX(150%); transition: 0.4s; font-size: 13px; }
+.toast.show { transform: translateX(0); }
+
+/* CAMERA MODAL */
+.camera-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; flex-direction: column; align-items: center; justify-content: center; }
+#video { width: 80%; max-width: 400px; border-radius: 20px; border: 3px solid #00bcd4; }
+#snap { background: #00bcd4; border: none; padding: 15px 40px; border-radius: 50px; color: white; margin-top: 20px; cursor: pointer; }
+.btn-close { position: absolute; top: 20px; right: 20px; background: none; color: white; border: none; font-size: 30px; cursor: pointer; }

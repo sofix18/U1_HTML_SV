@@ -24,17 +24,34 @@ body {
 }
 
 .logo-dashboard { font-size: 1.4rem; } /* Logo del dashboard con un tamaño de fuente más grande para destacar el nombre del coach */
-.nav-right { display: flex; align-items: center; gap: 20px; } /* Contenedor para las opciones de navegación a la derecha */
-.btn-perfil { color: white; text-decoration: none; font-size: 0.9rem; } /* Estilo para el enlace de perfil */
-.btn-perfil:hover { text-decoration: underline; } /* Efecto hover para el enlace de perfil */
-
-.btn-logout { /* Estilo para el botón de cerrar sesión */
-    color: white; text-decoration: none; border: 1px solid white; /* Borde blanco para resaltar el botón */
-    padding: 7px 15px; border-radius: 5px; font-size: 0.9rem; /* Tamaño de fuente más pequeño para el botón de cerrar sesión */
-    transition: 0.3s; /* Transición suave para el efecto hover */
+/* NAVBAR - OPCIONES DE LA DERECHA */
+.nav-right { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
 }
-.btn-logout:hover { background: white; color: var(--rojo-principal); } /* Efecto hover para el botón de cerrar sesión */
 
+/* Forzamos el estilo apuntando directamente a la etiqueta 'a' con su clase */
+a.btn-perfil, 
+a.btn-logout { 
+    color: #ffffff !important;        /* Blanco puro forzado */
+    text-decoration: none !important; /* Sin subrayado */
+    border: 1px solid #ffffff !important; /* Borde blanco */
+    padding: 7px 15px; 
+    border-radius: 5px; 
+    font-size: 0.9rem;
+    transition: 0.3s;
+    display: inline-block;
+    background: transparent;
+}
+
+/* Efecto Hover para que cambien al mismo tiempo */
+a.btn-perfil:hover, 
+a.btn-logout:hover { 
+    background: #ffffff !important; 
+    color: var(--rojo-principal) !important; 
+    text-decoration: none !important;
+}
 /* LAYOUT & SIDEBAR */
 .container-dash { display: flex; min-height: calc(100vh - 70px); } /* Contenedor principal con altura completa menos la barra de navegación */
 
@@ -156,7 +173,25 @@ td { padding: 15px 12px; border-bottom: 1px solid #eee; } /* Estilo para las cel
     .content {
         flex: 1 !important;
         width: 950px !important;
-        padding: 20px !important;
+        padding: 20px !important; 
         background-color: #f4f4f4 !important;
     }
+}
+/* ELIMINAMOS EL AZUL A LA FUERZA PARA TODOS LOS LINKS DE LA NAV */
+.nav-right a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border: 1px solid #ffffff !important;
+    padding: 7px 15px !important;
+    border-radius: 5px !important;
+    font-size: 0.9rem !important;
+    display: inline-block !important;
+    background: transparent !important;
+    transition: 0.3s !important;
+}
+
+/* EFECTO HOVER PARA AMBOS */
+.nav-right a:hover {
+    background: #ffffff !important;
+    color: #D32F2F !important; /* Rojo principal */
 }
