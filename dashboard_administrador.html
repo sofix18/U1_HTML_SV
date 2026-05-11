@@ -1,60 +1,62 @@
-<!DOCTYPE html> <html lang="es"> <head> <script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script>
         if (!localStorage.getItem('user')) {
             window.location.href = 'login.html';
         }
     </script>
-    
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>SportClub - Administrador Central</title> 
-    <link rel="stylesheet" href="css/dashboard_administrador.css"> 
-</head> 
-<body> 
-    <header class="top-header"> 
-        <div class="brand"> 
-            <img src="image/logo_empresa_letra_v1.png" alt="Logo" style="height: 30px; vertical-align: middle; margin-right: 10px;"> 
-            SportClub <strong>Admin</strong> 
-        </div> 
-        <div class="header-nav"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportClub - Administrador Central</title>
+    <link rel="stylesheet" href="css/dashboard_administrador.css">
+</head>
+<body>
+    <header class="top-header">
+        <div class="brand">
+            <img src="image/logo_empresa_letra_v1.png" alt="Logo" style="height: 30px; vertical-align: middle; margin-right: 10px;">
+            SportClub <strong>Admin</strong>
+        </div>
+        <div class="header-nav">
             <a href="perfil.html" class="nav-link">Mi Perfil</a>
             <a href="#" id="btnLogout" class="nav-link logout">Cerrar Sesión</a>
-        </div> 
-    </header> 
+        </div>
+    </header>
 
-    <div class="dashboard-container"> 
-        <aside class="sidebar"> 
-            <nav> 
-                <ul> 
-                    <li><a href="#"><span class="icon">🏠</span> Gestión Usuarios</a></li> 
-                    <li><a href="#"><span class="icon">📊</span> Reportes</a></li> 
-                    <li><a href="#"><span class="icon">🏢</span> Sedes</a></li> 
-                    <li><a href="#"><span class="icon">⚙️</span> Ajustes</a></li> 
-                </ul> 
-            </nav> 
-        </aside> 
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#"><span class="icon">🏠</span> Gestión Usuarios</a></li>
+                    <li><a href="#"><span class="icon">📊</span> Reportes</a></li>
+                    <li><a href="#"><span class="icon">🏢</span> Sedes</a></li>
+                    <li><a href="#"><span class="icon">⚙️</span> Ajustes</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-        <main class="main-content"> 
-            <section class="welcome"> 
+        <main class="main-content">
+            <section class="welcome">
                 <h1>¡Hola, <span id="userNameDisplay">Administrador</span>!</h1>
-                <p>Bienvenido al panel de control central de SportClub.</p> 
-            </section> 
+                <p>Bienvenido al panel de control central de SportClub.</p>
+            </section>
 
-            <div class="stats-grid"> 
-                <div class="card"> 
-                    <h3>USUARIOS ACTIVOS</h3> 
-                    <p class="value">842</p> 
-                </div> 
-                <div class="card"> 
-                    <h3>CLASES DEL DÍA</h3> 
-                    <p class="value">24</p> 
-                </div> 
-                <div class="card"> 
-                    <h3>TOTAL REGISTROS</h3> 
-                    <p class="value">1,254 📈</p> 
-                </div> 
-            </div> 
+            <div class="stats-grid">
+                <div class="card">
+                    <h3>USUARIOS ACTIVOS</h3>
+                    <p class="value">842</p>
+                </div>
+                <div class="card">
+                    <h3>CLASES DEL DÍA</h3>
+                    <p class="value">24</p>
+                </div>
+                <div class="card">
+                    <h3>TOTAL REGISTROS</h3>
+                    <p class="value">1,254 📈</p>
+                </div>
+            </div>
 
-            <section class="table-section"> 
+            <section class="table-section">
                 <h2>👥 Gestión de Usuarios</h2>
                 
                 <button id="btnNuevoUsuario" class="btn-action" style="background: #28a745; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; margin-bottom: 15px; font-weight: bold;">
@@ -80,17 +82,45 @@
             </section>
         </main>
     </div>
-    <div id="modalEliminar" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); align-items: center; justify-content: center;">
-    <div style="background: white; padding: 25px; border-radius: 12px; width: 320px; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-        <div style="font-size: 50px; color: #dc3545; margin-bottom: 10px;">⚠️</div>
-        <h3 style="margin: 0; color: #302b63;">¿Eliminar usuario?</h3>
-        <p style="color: #666; font-size: 14px; margin: 10px 0 20px;">Esta acción no se puede deshacer.</p>
-        <div style="display: flex; gap: 10px; justify-content: center;">
-            <button id="confirmarSi" style="background: #dc3545; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; flex: 1;">Sí, borrar</button>
-            <button id="confirmarNo" style="background: #e9ecef; color: #333; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; flex: 1;">Cancelar</button>
+
+    <div id="modalUsuario" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:2000; align-items:center; justify-content:center;">
+        <div style="background:white; padding:30px; border-radius:12px; width:400px; box-shadow:0 10px 25px rgba(0,0,0,0.3); font-family:sans-serif;">
+            <h2 style="margin-top:0; color:#302b63;">Nuevo Usuario</h2>
+            <form id="formNuevoUsuario">
+                <label style="display:block; margin-bottom:5px; font-weight:bold;">Nombre</label>
+                <input type="text" id="inputNombre" required style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ddd; border-radius:6px;">
+                
+                <label style="display:block; margin-bottom:5px; font-weight:bold;">Correo</label>
+                <input type="email" id="inputEmail" required style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ddd; border-radius:6px;">
+                
+                <label style="display:block; margin-bottom:5px; font-weight:bold;">Rol</label>
+                <select id="selectRol" style="width:100%; padding:10px; margin-bottom:20px; border:1px solid #ddd; border-radius:6px;">
+                    <option value="user">Usuario</option>
+                    <option value="coach">Coach</option>
+                    <option value="admin">Administrador</option>
+                </select>
+                
+                <div style="display:flex; gap:10px;">
+                    <button type="submit" style="flex:1; background:#28a745; color:white; border:none; padding:12px; border-radius:6px; cursor:pointer; font-weight:bold;">Guardar</button>
+                    <button type="button" id="btnCerrarModal" style="flex:1; background:#e9ecef; color:#333; border:none; padding:12px; border-radius:6px; cursor:pointer; font-weight:bold;">Cancelar</button>
+                </div>
+            </form>
         </div>
     </div>
-</div>
+
+    <div id="modalEliminar" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); align-items: center; justify-content: center;">
+        <div style="background: white; padding: 25px; border-radius: 12px; width: 320px; text-align: center; font-family: sans-serif; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+            <div style="font-size: 50px; color: #dc3545; margin-bottom: 10px;">⚠️</div>
+            <h3 style="margin: 0; color: #302b63;">¿Eliminar usuario?</h3>
+            <p style="color: #666; font-size: 14px; margin: 10px 0 20px;">Esta acción no se puede deshacer.</p>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+                <button id="confirmarBorradoBtn" style="background: #dc3545; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; flex: 1;">Sí, borrar</button>
+                <button id="cancelarBorradoBtn" style="background: #e9ecef; color: #333; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; flex: 1;">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notificacionContainer" style="position:fixed; top:20px; right:20px; z-index:3000;"></div>
 
     <script src="js/dashboards.js"></script>
 </body>

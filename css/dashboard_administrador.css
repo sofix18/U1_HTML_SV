@@ -159,3 +159,48 @@ body { background-color: #f0f2f5; color: #333; } /* Fondo claro y texto oscuro p
     margin-bottom: 20px; /* Lo separa de la tabla */
     display: inline-block;
 }
+
+/* Espaciado del Modal de Nuevo Usuario */
+#modalUsuario .modal-box, 
+#modalUsuario > div {
+    padding: 40px !important; /* Más espacio interno */
+    line-height: 1.6;
+}
+
+#formNuevoUsuario label {
+    display: block;
+    margin-bottom: 8px; /* Separa el label del input */
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+#formNuevoUsuario input, 
+#formNuevoUsuario select {
+    margin-bottom: 20px !important; /* Separa cada campo del siguiente */
+    border: 1px solid #ddd;
+    padding: 12px !important;
+}
+
+/* Espaciado del Modal de Borrar */
+#modalEliminar > div {
+    padding: 35px !important;
+}
+
+#modalEliminar h3 {
+    margin-bottom: 15px !important;
+}
+
+#modalEliminar p {
+    margin-bottom: 25px !important;
+}
+
+/* Espaciado de la Tabla */
+.data-table th, 
+.data-table td {
+    padding: 15px 20px !important; /* Celdas más altas y anchas */
+}
+
+.btn-action {
+    margin-bottom: 25px !important; /* Separa el botón verde de la tabla */
+}
