@@ -95,19 +95,19 @@ async function cargarUsuarios() {
     }
 }
 
-// Funciones Globales para el CRUD
+// Funciones para el CRUD
 window.prepararEdicion = function(usuario) {
     localStorage.setItem('editUser', JSON.stringify(usuario));
     window.location.href = 'register.html';
 }
 
-// --- VERSIÓN PROFESIONAL DEL MENSAJE DE ELIMINAR ---
+// --- Versión del mensaje eliminar ---
 window.eliminarUsuario = function(id) {
     const modal = document.getElementById('modalEliminar');
     const btnSi = document.getElementById('confirmarSi');
     const btnNo = document.getElementById('confirmarNo');
 
-    // Mostramos el modal elegante
+    // Mostrar el modal
     modal.style.display = 'flex';
 
     // Si el usuario se arrepiente

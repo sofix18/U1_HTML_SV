@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const user = JSON.parse(localStorage.getItem('user'));
     
-    // 1. CARGAR DATOS Y FOTO
+    // 1. Cargar datos del usuario en el perfil
     if (user) {
         document.getElementById('sideName').textContent = user.full_name;
         document.getElementById('sideEmail').textContent = user.email;
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 2. MENÚ DE FOTO
+    // 2. Menu de foto de perfil
     const btnMenu = document.getElementById('btnShowMenu');
     const menu = document.getElementById('photoMenu');
     btnMenu.onclick = (e) => { 
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     document.onclick = () => menu.style.display = 'none';
 
-    // 3. OPCIÓN GALERÍA
+    // 3. Opción Galería
     const input = document.createElement('input'); 
     input.type = 'file'; 
     input.accept = 'image/*';
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         reader.readAsDataURL(e.target.files[0]);
     };
 
-    // 4. OPCIÓN CÁMARA
+    // 4. Opción camara
     const modal = document.getElementById('cameraModal');
     const video = document.getElementById('video');
     document.getElementById('optionCamera').onclick = async () => {
@@ -58,14 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'none'; 
     }
 
-    // 5. OPCIÓN ELIMINAR
+    // 5. Opción eliminar foto
     document.getElementById('optionDelete').onclick = () => {
         localStorage.removeItem('user_photo');
         updateInitials(user.full_name);
         showToast("Foto eliminada correctamente");
     };
 
-    // FUNCIONES COMPARTIDAS
+    // Funciones compartidas
     function saveAndSync(base64) {
         setProfilePic(base64);
         localStorage.setItem('user_photo', base64);
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('userInitials').textContent = ini;
     }
 
-    // 6. EVENTOS DE BOTONES ACCIÓN
+    // 6. Eventos de guardar perfil y cambiar contraseña
     document.getElementById('btnGuardar').onclick = () => {
         showToast("Perfil actualizado con éxito");
     };
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 });
 
-// FUNCIÓN DE MENSAJES (TOAST)
+// Función para mostrar notificaciones tipo toast
 function showToast(msg, type = 'success') {
     const container = document.getElementById('toastContainer');
     const toast = document.createElement('div');

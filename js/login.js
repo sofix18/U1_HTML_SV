@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Sacamos el rol real
                 const role = (user.role || "").toLowerCase().trim();
 
-                // --- REDIRECCIÓN SEGÚN PERMISOS ---
+                // --- Redirección segun sus permisos ---
                 if (role === 'admin' || email.includes('admin')) {
                     // El Admin es el único que ve la tabla de gestión
                     window.location.href = 'dashboard_administrador.html';
